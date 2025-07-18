@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudhanshu R Sakhare</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="SudhanshuCss.css" />
+  </head>
+  <body>
+    <div class="animated-bg"></div>
+    <div class="particle-system" id="particleSystem"></div>
+
+    <div class="resume-container">
+      <!-- Header -->
+      <div class="header">
+        <div class="profile-section">
+          <div class="profile-image-container" onclick="changeProfileImage()">
+            <img
+              src="./sudhanshuPic.jpg"
+              alt="Sudhanshu Profile"
+              class="profile-image"
+              id="profileImage"
+            />
+            <div class="profile-overlay">
+              <i class="fas fa-camera"></i>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="name">Sudhanshu R Sakhare</h1>
+        <p class="title">Full Stack Developer & Software Engineer</p>
+
+        <div class="contact-info">
+          <div
+            class="contact-item"
+            onclick="copyToClipboard('sudhanshusakhare808@gmail.com')"
+          >
+            <i class="fas fa-envelope"></i>
+            <span>sudhanshusakhare808@gmail.com</span>
+          </div>
+          <div class="contact-item" onclick="copyToClipboard('+91 9284272018')">
+            <i class="fas fa-phone"></i>
+            <span>+91 9284272018</span>
+          </div>
+          <div class="contact-item" onclick="copyToClipboard('Nagpur, India')">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Nagpur, India</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/Sudhanshu-SRS"
+            target="_blank"
+            class="social-link github"
+          >
+            <i class="fab fa-github"></i>
+            <span class="tooltip">Visit GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sudhanshu-sakhare-873598189/"
+            target="_blank"
+            class="social-link linkedin"
+          >
+            <i class="fab fa-linkedin"></i>
+            <span class="tooltip">Connect on LinkedIn</span>
+          </a>
+          <a
+            href="https://x.com/Sudhanshu_808"
+            target="_blank"
+            class="social-link twitter"
+          >
+            <i class="fab fa-twitter x-logo"></i>
+            <span class="tooltip">Follow on X</span>
+          </a>
+          <a
+            href="mailto:sudhanshusakhare808@gmail.com"
+            class="social-link email"
+          >
+            <i class="fas fa-envelope"></i>
+            <span class="tooltip">Send Email</span>
+          </a>
+          <a
+            href="https://www.instagram.com/sudhanshu_sakhare/"
+            target="_blank"
+            class="social-link instagram"
+          >
+            <i class="fab fa-instagram"></i>
+            <span class="tooltip">Follow on Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="section summary-section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="profile-summary">
+          Passionate Full Stack MERN Developer with 2+ years of experience in
+          designing and developing scalable web applications. Proficient in
+          modern web technologies including React, Node.js, Java, and cloud
+          platforms. Strong problem-solving skills with a proven track record of
+          delivering high-quality software solutions. Experienced in agile
+          development methodologies and committed to writing clean, maintainable
+          code. Seeking to leverage technical expertise and passion for
+          innovation to contribute to a dynamic development team.
+        </p>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="section skills-section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Frontend Technologies</h4>
+            <div class="skill-list">
+              <span class="skill-item">HTML5</span>
+              <span class="skill-item">CSS3</span>
+              <span class="skill-item">JavaScript</span>
+              <span class="skill-item">React.js</span>
+              <span class="skill-item">Vue.js</span>
+              <span class="skill-item">Bootstrap</span>
+              <span class="skill-item">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Backend Technologies</h4>
+            <div class="skill-list">
+              <span class="skill-item">Java</span>
+              <span class="skill-item">Spring Boot</span>
+              <span class="skill-item">Node.js</span>
+              <span class="skill-item">Express.js</span>
+              <span class="skill-item">Python</span>
+              <span class="skill-item">REST APIs</span>
+              <span class="skill-item">Microservices</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Database & Cloud</h4>
+            <div class="skill-list">
+              <span class="skill-item">MySQL</span>
+              <span class="skill-item">PostgreSQL</span>
+              <span class="skill-item">MongoDB</span>
+              <span class="skill-item">Firebase</span>
+              <span class="skill-item">AWS</span>
+              <span class="skill-item">Docker</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Tools & Others</h4>
+            <div class="skill-list">
+              <span class="skill-item">Git</span>
+              <span class="skill-item">GitHub</span>
+              <span class="skill-item">VS Code</span>
+              <span class="skill-item">IntelliJ IDEA</span>
+              <span class="skill-item">Postman</span>
+              <span class="skill-item">Jira</span>
+              <span class="skill-item">R-studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Experience -->
+      <div class="section experience-section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="experience-item">
+          <h3 class="job-title">Full Stack Developer</h3>
+          <p class="company">Carnegie TechX Pvt. Ltd.</p>
+          <p class="duration">June 2024 - Present</p>
+          <div class="description">
+            <ul>
+              <li>
+                Developed and maintained 5+ web applications using React.js and
+                Node.js, serving 10,000+ users
+              </li>
+              <li>
+                Implemented RESTful APIs and microservices architecture,
+                improving system performance by 30%
+              </li>
+              <li>
+                Collaborated with cross-functional teams using Agile methodology
+                to deliver projects on time
+              </li>
+              <li>
+                Optimized database and implemented caching strategies, reducing
+                response time by 25%
+              </li>
+              <li>
+                Mentored 2 junior developers and conducted code reviews to
+                maintain code quality standards
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <h3 class="job-title">Ethical Hacking Intern</h3>
+          <p class="company">One Byte Labs</p>
+          <p class="duration">August 2022 - January 2023</p>
+          <div class="description">
+            <ul>
+              <li>
+                Conducted vulnerability assessments and penetration testing on
+                web applications and internal systems
+              </li>
+              <li>
+                Performed reconnaissance, enumeration, and exploitation using
+                tools like Nmap, Burp Suite, and Metasploit
+              </li>
+              <li>
+                Prepared detailed security audit reports and recommended
+                mitigation strategies
+              </li>
+              <li>
+                Collaborated with the development team to patch critical
+                vulnerabilities
+              </li>
+              <li>
+                Assisted in developing internal security automation scripts
+                using Python
+              </li>
+              <li>
+                Implemented basic network monitoring and intrusion detection
+                solutions
+              </li>
+              <li>
+                Participated in CTF challenges to enhance practical hacking
+                skills
+              </li>
+              <li>
+                Documented ethical hacking processes and maintained testing
+                environments
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience-item">
+          <h3 class="job-title">Computer Network & Hardware Repair</h3>
+          <p class="company">Kapils Tech</p>
+          <p class="duration">February 2022 – July 2022</p>
+          <div class="description">
+            <ul>
+              <li>
+                Repaired and maintained computer hardware components and
+                peripherals
+              </li>
+              <li>Configured routers, switches, and LAN setups for clients</li>
+              <li>
+                Resolved system errors, network issues, and performed OS
+                installations
+              </li>
+              <li>Provided remote and on-site technical support to users</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Projects -->
+      <div class="section projects-section">
+        <h2 class="section-title">Key Projects</h2>
+
+        <div class="project-item">
+          <h3 class="project-title">E-commerce Platform</h3>
+          <p class="duration">Live Project | 2025</p>
+          <div class="description">
+            Full-stack e-commerce solution with user authentication, shopping
+            cart, payment integration, and admin dashboard. Features include
+            product catalog, order management, and real-time inventory tracking.
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Stripe API</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://rashistudio.com/"
+              target="_blank"
+              class="project-link live-link"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/Sudhanshu-SRS/ecommerce-platform"
+              target="_blank"
+              class="project-link github-link"
+            >
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h3 class="project-title">GrindBoard: Task Management Application</h3>
+          <p class="duration">Major Project | 2025</p>
+          <div class="description">
+            Collaborative task management tool with real-time updates, team
+            collaboration features, and project tracking. Implemented
+            drag-and-drop functionality and notification system.
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">WebSocket</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://grindboard-demo.netlify.app"
+              target="_blank"
+              class="project-link live-link"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/Sudhanshu-SRS/GrindBoard"
+              target="_blank"
+              class="project-link github-link"
+            >
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h3 class="project-title">Isasia Revari : MERN App's Dashboard</h3>
+          <p class="duration">Live Project | 2024</p>
+          <div class="description">
+            Interactive dashboard application with real-time data visualization,
+            user management, and analytics. Built with modern MERN stack
+            technologies and responsive design principles.
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Chart.js</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://isasia-revari-dashboard.vercel.app"
+              target="_blank"
+              class="project-link live-link"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/Sudhanshu-SRS/Inventory-Management-System"
+              target="_blank"
+              class="project-link github-link"
+            >
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section education-section">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-item">
+          <h3 class="degree-title">Master of Computer Applications (MCA)</h3>
+          <p class="institution">
+            Dr. Babasaheb Ambedkar Technological University (DBATU)
+          </p>
+          <p class="duration">2024 – Present | CGPA (Sem I): 8.91</p>
+          <div class="description">
+            <strong>Status:</strong> Currently Pursuing
+          </div>
+        </div>
+        <div class="education-item">
+          <h3 class="degree-title">Bachelor of Science in Computer Science</h3>
+          <p class="institution">RTMNU University</p>
+          <p class="duration">2020 - 2024 | DIVISION : I</p>
+          <div class="description">
+            <strong>Relevant Coursework:</strong> Data Structures and
+            Algorithms, Database Management Systems, Software Engineering, Web
+            Development, Computer Networks, Operating Systems
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Column Section -->
+      <div class="two-column">
+        <!-- Certifications -->
+        <div class="certifications">
+          <h4>Certifications</h4>
+          <div class="cert-item">
+            <div class="cert-name">One Byte Labs Certified Ethical Hacking</div>
+            <div class="cert-date">2023</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">VFX Certification</div>
+            <div class="cert-date">2024</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">3d & CGI Certification</div>
+            <div class="cert-date">2024</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Full Stack Web Development</div>
+            <div class="cert-date">2023</div>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="achievements">
+          <h4>Key Achievements</h4>
+          <ul class="achievement-list">
+            <li>
+              Secured 1st rank in Inter-College Statistical Presentation
+              competition
+            </li>
+            <li>Won 3rd place in Inter-College Group Discussion competition</li>
+            <li>Achieved 1st position in CodeHunt at college tech fest</li>
+            <li>Delivered 15+ live client projects with hands-on deployment</li>
+            <li>
+              Maintains 10+ active GitHub repositories with real-world project
+              releases
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Action Menu -->
+    <div class="floating-menu">
+      <div class="fab-options" id="fabOptions">
+        <button
+          class="fab-option"
+          onclick="downloadResume()"
+          title="Download PDF"
+        >
+          <i class="fas fa-download"></i>
+        </button>
+        <button class="fab-option" onclick="printResume()" title="Print">
+          <i class="fas fa-print"></i>
+        </button>
+        <button class="fab-option" onclick="shareResume()" title="Share">
+          <i class="fas fa-share"></i>
+        </button>
+        <button class="fab-option" onclick="toggleTheme()" title="Toggle Theme">
+          <i class="fas fa-palette"></i>
+        </button>
+      </div>
+      <button class="fab-main" onclick="toggleFabMenu()">
+        <i class="fas fa-plus" id="fabIcon"></i>
+      </button>
+    </div>
+
+    <script>
+      // Wait for DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Floating Action Button functionality
+        let fabMenuOpen = false;
+        let currentTheme = "default";
+
+        // Make functions globally accessible
+        window.toggleFabMenu = function () {
+          const fabOptions = document.getElementById("fabOptions");
+          const fabIcon = document.getElementById("fabIcon");
+
+          if (fabMenuOpen) {
+            fabOptions.classList.remove("active");
+            fabIcon.className = "fas fa-plus";
+            fabMenuOpen = false;
+          } else {
+            fabOptions.classList.add("active");
+            fabIcon.className = "fas fa-times";
+            fabMenuOpen = true;
+          }
+        };
+
+        // Enhanced particle system
+        function createParticle() {
+          const particleSystem = document.getElementById("particleSystem");
+          if (!particleSystem) return;
+
+          const particle = document.createElement("div");
+          particle.classList.add("particle");
+          particle.style.left = Math.random() * 100 + "vw";
+          particle.style.animationDelay = Math.random() * 8 + "s";
+          particle.style.animationDuration = Math.random() * 3 + 8 + "s";
+          particleSystem.appendChild(particle);
+
+          // Remove particle after animation
+          setTimeout(() => {
+            if (particle.parentNode) {
+              particle.remove();
+            }
+          }, 11000);
+        }
+
+        // Create particles continuously
+        setInterval(createParticle, 300);
+
+        // Copy to clipboard functionality
+        window.copyToClipboard = function (text) {
+          if (navigator.clipboard) {
+            navigator.clipboard
+              .writeText(text)
+              .then(function () {
+                showNotification("Copied to clipboard: " + text);
+              })
+              .catch(function () {
+                // Fallback for older browsers
+                fallbackCopyTextToClipboard(text);
+              });
+          } else {
+            fallbackCopyTextToClipboard(text);
+          }
+        };
+
+        // Fallback copy function
+        function fallbackCopyTextToClipboard(text) {
+          const textArea = document.createElement("textarea");
+          textArea.value = text;
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+
+          try {
+            document.execCommand("copy");
+            showNotification("Copied to clipboard: " + text);
+          } catch (err) {
+            showNotification("Failed to copy text");
+          }
+
+          document.body.removeChild(textArea);
+        }
+
+        // Enhanced notification system
+        function showNotification(message) {
+          const notification = document.createElement("div");
+          notification.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #10b981, #047857);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        z-index: 10000;
+        font-size: 14px;
+        font-weight: 600;
+        animation: slideIn 0.5s ease, fadeOut 0.5s ease 2.5s;
+        border: 2px solid #34d399;
+      ">
+        <i class="fas fa-check-circle" style="margin-right: 10px; font-size: 16px;"></i>
+        ${message}
+      </div>
+    `;
+
+          document.body.appendChild(notification);
+
+          setTimeout(() => {
+            if (notification.parentNode) {
+              notification.remove();
+            }
+          }, 3000);
+        }
+
+        // Enhanced profile image functionality with social media message
+        window.changeProfileImage = function () {
+          // Create and show social media connect message
+          showSocialConnectMessage();
+
+          // Add a subtle animation to the profile image
+          const currentImage = document.getElementById("profileImage");
+          if (currentImage) {
+            currentImage.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              currentImage.style.transform = "scale(1)";
+            }, 150);
+          }
+        };
+
+        // Function to show social media connect message
+        function showSocialConnectMessage() {
+          // Remove any existing social message
+          const existingMessage = document.getElementById(
+            "socialConnectMessage"
+          );
+          if (existingMessage) {
+            existingMessage.remove();
+          }
+
+          // Create the social connect message
+          const socialMessage = document.createElement("div");
+          socialMessage.id = "socialConnectMessage";
+          socialMessage.innerHTML = `
+            <div style="
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: linear-gradient(135deg, #667eea, #764ba2);
+              color: white;
+              padding: 30px;
+              border-radius: 20px;
+              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+              z-index: 10001;
+              text-align: center;
+              min-width: 320px;
+              max-width: 90vw;
+              animation: socialModalSlideIn 0.5s ease;
+              backdrop-filter: blur(10px);
+              border: 2px solid rgba(255, 255, 255, 0.2);
+            ">
+              <div style="margin-bottom: 20px;">
+                <h3 style="margin: 0 0 10px 0; font-size: 1.4rem; font-weight: 600;">
+                  <i class="fas fa-handshake" style="margin-right: 10px; color: #ffd700;"></i>
+                  Let's Connect!
+                </h3>
+                <p style="margin: 0; font-size: 1rem; opacity: 0.9;">
+                  Follow me on these social platforms:
+                </p>
+              </div>
+              
+              <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
+                <a href="https://github.com/Sudhanshu-SRS" target="_blank" style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  padding: 10px 15px;
+                  background: #333;
+                  color: white;
+                  text-decoration: none;
+                  border-radius: 25px;
+                  font-size: 0.9rem;
+                  font-weight: 500;
+                  transition: all 0.3s ease;
+                  border: 2px solid transparent;
+                " onmouseover="this.style.background='#24292e'; this.style.transform='translateY(-2px)'; this.style.borderColor='#ffd700';" onmouseout="this.style.background='#333'; this.style.transform='translateY(0)'; this.style.borderColor='transparent';">
+                  <i class="fab fa-github" style="font-size: 1.1rem;"></i>
+                  GitHub
+                </a>
+                
+                <a href="https://www.linkedin.com/in/sudhanshu-sakhare-873598189/" target="_blank" style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  padding: 10px 15px;
+                  background: #0077b5;
+                  color: white;
+                  text-decoration: none;
+                  border-radius: 25px;
+                  font-size: 0.9rem;
+                  font-weight: 500;
+                  transition: all 0.3s ease;
+                  border: 2px solid transparent;
+                " onmouseover="this.style.background='#005885'; this.style.transform='translateY(-2px)'; this.style.borderColor='#ffd700';" onmouseout="this.style.background='#0077b5'; this.style.transform='translateY(0)'; this.style.borderColor='transparent';">
+                  <i class="fab fa-linkedin" style="font-size: 1.1rem;"></i>
+                  LinkedIn
+                </a>
+                
+                <a href="https://x.com/Sudhanshu_808" target="_blank" style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  padding: 10px 15px;
+                  background: #000;
+                  color: white;
+                  text-decoration: none;
+                  border-radius: 25px;
+                  font-size: 0.9rem;
+                  font-weight: 500;
+                  transition: all 0.3s ease;
+                  border: 2px solid transparent;
+                " onmouseover="this.style.background='#333'; this.style.transform='translateY(-2px)'; this.style.borderColor='#ffd700';" onmouseout="this.style.background='#000'; this.style.transform='translateY(0)'; this.style.borderColor='transparent';">
+                  <span style="font-size: 1.1rem; font-weight: bold;">𝕏</span>
+                  X (Twitter)
+                </a>
+                
+                <a href="https://www.instagram.com/sudhanshu_sakhare/" target="_blank" style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  padding: 10px 15px;
+                  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+                  color: white;
+                  text-decoration: none;
+                  border-radius: 25px;
+                  font-size: 0.9rem;
+                  font-weight: 500;
+                  transition: all 0.3s ease;
+                  border: 2px solid transparent;
+                " onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='#ffd700';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='transparent';">
+                  <i class="fab fa-instagram" style="font-size: 1.1rem;"></i>
+                  Instagram
+                </a>
+              </div>
+              
+              <div style="display: flex; justify-content: center; gap: 10px;">
+                <button onclick="closeSocialMessage()" style="
+                  padding: 8px 20px;
+                  background: rgba(255, 255, 255, 0.2);
+                  color: white;
+                  border: 2px solid rgba(255, 255, 255, 0.3);
+                  border-radius: 20px;
+                  cursor: pointer;
+                  font-size: 0.9rem;
+                  font-weight: 500;
+                  transition: all 0.3s ease;
+                " onmouseover="this.style.background='rgba(255, 255, 255, 0.3)'; this.style.borderColor='rgba(255, 255, 255, 0.5)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.borderColor='rgba(255, 255, 255, 0.3)';">
+                  <i class="fas fa-times" style="margin-right: 5px;"></i>
+                  Close
+                </button>
+                
+                <button onclick="copyContactInfo()" style="
+                  padding: 8px 20px;
+                  background: #10b981;
+                  color: white;
+                  border: 2px solid #10b981;
+                  border-radius: 20px;
+                  cursor: pointer;
+                  font-size: 0.9rem;
+                  font-weight: 500;
+                  transition: all 0.3s ease;
+                " onmouseover="this.style.background='#047857'; this.style.borderColor='#047857';" onmouseout="this.style.background='#10b981'; this.style.borderColor='#10b981';">
+                  <i class="fas fa-copy" style="margin-right: 5px;"></i>
+                  Copy Email
+                </button>
+              </div>
+            </div>
+            
+            <div style="
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.5);
+              z-index: 10000;
+              animation: socialOverlayFadeIn 0.5s ease;
+              backdrop-filter: blur(5px);
+            " onclick="closeSocialMessage()">
+            </div>
+          `;
+
+          document.body.appendChild(socialMessage);
+
+          // Auto-close after 10 seconds
+          setTimeout(() => {
+            if (document.getElementById("socialConnectMessage")) {
+              closeSocialMessage();
+            }
+          }, 10000);
+        }
+
+        // Function to close social media message
+        window.closeSocialMessage = function () {
+          const socialMessage = document.getElementById("socialConnectMessage");
+          if (socialMessage) {
+            socialMessage.style.animation = "socialModalSlideOut 0.3s ease";
+            setTimeout(() => {
+              socialMessage.remove();
+            }, 300);
+          }
+        };
+
+        // Function to copy contact info
+        window.copyContactInfo = function () {
+          const contactInfo = `
+🚀 Let's Connect!
+
+📧 Email: sudhanshusakhare808@gmail.com
+📱 Phone: +91 9284272018
+📍 Location: Nagpur, India
+
+🌐 Social Links:
+• GitHub: https://github.com/Sudhanshu-SRS
+• LinkedIn: https://www.linkedin.com/in/sudhanshu-sakhare-873598189/
+• X (Twitter): https://x.com/Sudhanshu_808
+• Instagram: https://www.instagram.com/sudhanshu_sakhare/
+
+💼 Full Stack MERN Developer & Software Engineer
+  `;
+
+          copyToClipboard(contactInfo);
+          closeSocialMessage();
+        };
+
+        // Theme toggle functionality
+        window.toggleTheme = function () {
+          const body = document.body;
+          const themes = ["default", "dark", "colorful"];
+          const currentIndex = themes.indexOf(currentTheme);
+          const nextIndex = (currentIndex + 1) % themes.length;
+          currentTheme = themes[nextIndex];
+
+          body.className = currentTheme + "-theme";
+          showNotification(`Switched to ${currentTheme} theme!`);
+        };
+
+        // Download resume functionality
+        window.downloadResume = function () {
+          showNotification("Preparing resume for download...");
+          setTimeout(() => {
+            window.print();
+          }, 1000);
+        };
+
+        // Print resume functionality
+        window.printResume = function () {
+          window.print();
+        };
+
+        // Share resume functionality
+        window.shareResume = function () {
+          if (navigator.share) {
+            navigator
+              .share({
+                title: "Sudhanshu - Interactive Resume",
+                text: "Check out my interactive resume!",
+                url: window.location.href,
+              })
+              .catch((err) => {
+                console.log("Error sharing:", err);
+                copyToClipboard(window.location.href);
+                showNotification("Resume link copied to clipboard!");
+              });
+          } else {
+            copyToClipboard(window.location.href);
+            showNotification("Resume link copied to clipboard!");
+          }
+        };
+
+        // Enhanced social link interactions
+        document.querySelectorAll(".social-link").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            this.style.transform = "scale(0.9)";
+            setTimeout(() => {
+              this.style.transform = "";
+            }, 150);
+          });
+        });
+
+        // Enhanced skill item interactions
+        document.querySelectorAll(".skill-item").forEach((skill) => {
+          skill.addEventListener("click", function () {
+            const skillName = this.textContent;
+            showNotification(`You clicked on ${skillName}!`);
+          });
+        });
+
+        // Add enhanced CSS animations
+        const animationStyles = document.createElement("style");
+        animationStyles.textContent = `
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+    
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes rainbow {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      animation: float 8s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .fab-options.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .fab-options {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+  `;
+        document.head.appendChild(animationStyles);
+
+        // Animate sections on scroll
+        const sections = document.querySelectorAll(".section");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.style.animation = "bounceIn 0.8s ease";
+            }
+          });
+        });
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+
+        // Add click effects to various elements
+        document
+          .querySelectorAll(".contact-item, .cert-item, .achievement-list li")
+          .forEach((item) => {
+            item.addEventListener("click", function () {
+              this.style.animation = "none";
+              setTimeout(() => {
+                this.style.animation = "rainbow 1s ease";
+              }, 10);
+            });
+          });
+
+        // Close FAB menu when clicking outside
+        document.addEventListener("click", function (e) {
+          const fabMenu = document.querySelector(".floating-menu");
+          if (fabMenu && !fabMenu.contains(e.target) && fabMenuOpen) {
+            toggleFabMenu();
+          }
+        });
+
+        // Enhanced keyboard navigation
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && fabMenuOpen) {
+            toggleFabMenu();
+          }
+          if (e.ctrlKey && e.key === "p") {
+            e.preventDefault();
+            printResume();
+          }
+        });
+
+        console.log("JavaScript loaded successfully!");
+      });
+    </script>
+  </body>
+</html>
