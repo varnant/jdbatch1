@@ -9,28 +9,34 @@ A comprehensive web-based portfolio management system for Java Full Stack traine
 ## 📸 Screenshots
 
 ### Main Dashboard
+
 ![Main Dashboard](screenshots/main-dashboard.png)
-*The main dashboard showing all student portfolios with filtering options*
+_The main dashboard showing all student portfolios with filtering options_
 
 ### Student Card Design
+
 ![Student Card](screenshots/student-card.png)
-*Individual student card with unique "View Portfolio" button and animations*
+_Individual student card with unique "View Portfolio" button and animations_
 
 ### Portfolio Button Animation
+
 ![Portfolio Button](screenshots/portfolio-button.gif)
-*Unique portfolio button with gradient effects, particles, and hover animations*
+_Unique portfolio button with gradient effects, particles, and hover animations_
 
 ### Filter System
+
 ![Filter System](screenshots/filter-system.png)
-*Advanced filtering system by batch, course, and status*
+_Advanced filtering system by batch, course, and status_
 
 ### Individual Portfolio
+
 ![Individual Portfolio](screenshots/individual-portfolio.png)
-*Example of Sudhanshu's interactive portfolio with animations*
+_Example of Sudhanshu's interactive portfolio with animations_
 
 ## 🚀 Features
 
 ### ✨ Core Features
+
 - **Modern Portfolio Cards**: Beautiful card-based design with hover effects
 - **Unique Portfolio Button**: Revolutionary gradient button with particle animations
 - **Advanced Filtering**: Filter by batch, course, active/pending status
@@ -39,6 +45,7 @@ A comprehensive web-based portfolio management system for Java Full Stack traine
 - **Interactive Animations**: Smooth animations and transitions throughout
 
 ### 🎯 Portfolio Button Features
+
 - **Gradient Background**: Purple-to-blue gradient with glow effects
 - **Rotating Icon**: Rocket icon that rotates 360° on hover
 - **Floating Particles**: Animated particles inside the button
@@ -47,6 +54,7 @@ A comprehensive web-based portfolio management system for Java Full Stack traine
 - **Two-line Text**: "View Portfolio" + "Interactive Resume"
 
 ### 📊 Statistics Dashboard
+
 - **Live Counters**: Animated counters showing total students, batches
 - **Status Tracking**: Active vs pending portfolio status
 - **Real-time Updates**: Stats update based on current filters
@@ -55,7 +63,9 @@ A comprehensive web-based portfolio management system for Java Full Stack traine
 
 ```
 JDCOEM-Portfolio-Manager/
-├── 📄 README.md                           # This file
+├── 📄 README.md                           # Project documentation
+├── 📄 CONTRIBUTING.md                     # Contributing guidelines
+├── 📄 LICENSE.md                          # MIT License
 ├── 🌐 Webpage/
 │   ├── 📄 varnan.html                     # Main webpage
 │   ├── 🎨 student-portfolio-styles.css    # Portfolio card styles
@@ -71,9 +81,6 @@ JDCOEM-Portfolio-Manager/
 │       ├── ⚡ main.js                     # Main portfolio script
 │       ├── 🎭 animations.js              # Animation handlers
 │       └── 🔄 interactions.js            # User interactions
-├── 📁 T.varnan_Sir_Repo/                 # Repository structure
-│   └── 📁 jdbatch1/
-│       └── 👨‍💻 Sudhanshu_Sakhare/         # Duplicate for repo structure
 └── 📁 screenshots/                       # Documentation images
     ├── 🖼️ main-dashboard.png
     ├── 🖼️ student-card.png
@@ -84,6 +91,7 @@ JDCOEM-Portfolio-Manager/
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
+
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 - Local web server (optional, for development)
 - Basic knowledge of HTML, CSS, JavaScript
@@ -91,19 +99,22 @@ JDCOEM-Portfolio-Manager/
 ### Quick Start
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/your-username/jdcoem-portfolio-manager.git
    cd jdcoem-portfolio-manager
    ```
 
 2. **Open the Main Page**
+
    - Navigate to `Webpage/varnan.html`
    - Open in your web browser
    - Or use a local server:
+
    ```bash
    # Using Python
    python -m http.server 8000
-   
+
    # Using Node.js
    npx http-server
    ```
@@ -114,39 +125,12 @@ JDCOEM-Portfolio-Manager/
 
 ## 📋 Usage Guide
 
-### For Administrators
-
-#### Adding New Students
-```javascript
-// Use the browser console to add new students
-addNewStudent({
-    folderName: "John_Doe_MCA",
-    name: "John Doe",
-    course: "MCA",
-    batch: 1,
-    specialization: "Java Full Stack Development"
-});
-```
-
-#### Updating Student Status
-```javascript
-// When a student uploads their portfolio folder
-updateStudentStatus("Student_Folder_Name", {
-    status: "active",
-    uploadDate: "2025-01-XX"
-});
-```
-
-#### Viewing Statistics
-```javascript
-// Check current repository statistics
-getRepositoryStats();
-```
-
 ### For Students
 
 #### Creating Your Portfolio
+
 1. **Create Your Folder**
+
    ```
    YourName_Surname/
    ├── YourName_Surname.html    # Main portfolio file
@@ -158,18 +142,45 @@ getRepositoryStats();
        └── interactions.js
    ```
 
-2. **Portfolio File Structure**
-   - Main HTML file should be named: `FirstName_LastName.html`
-   - Profile image: `profilePic.jpg` or similar
-   - Custom CSS: `YourNameCss.css`
-
-3. **Portfolio Requirements**
+2. **Portfolio Requirements**
    - Professional profile picture
    - Complete contact information
    - Skills and technologies
    - Project showcase
    - Professional experience
    - Education details
+
+### For Administrators
+
+#### Adding New Students
+
+```javascript
+// Use the browser console to add new students
+addNewStudent({
+  folderName: "John_Doe_MCA",
+  name: "John Doe",
+  course: "MCA",
+  batch: 1,
+  specialization: "Java Full Stack Development",
+});
+```
+
+#### Updating Student Status
+
+```javascript
+// When a student uploads their portfolio folder
+updateStudentStatus("Student_Folder_Name", {
+  status: "active",
+  uploadDate: "2025-01-XX",
+});
+```
+
+#### Viewing Statistics
+
+```javascript
+// Check current repository statistics
+getRepositoryStats();
+```
 
 ## 🎨 Customization Guide
 
@@ -180,191 +191,91 @@ The unique portfolio button can be customized in [`student-portfolio-styles.css`
 ```css
 /* Change gradient colors */
 .portfolio-btn-unique {
-    background: linear-gradient(135deg, #your-color1, #your-color2);
+  background: linear-gradient(135deg, #your-color1, #your-color2);
 }
 
 /* Modify hover effects */
 .portfolio-btn-unique:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(your-color, 0.4);
-}
-
-/* Customize particles */
-.btn-particles span {
-    background: rgba(255, 255, 255, 0.6); /* Particle color */
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(your-color, 0.4);
 }
 ```
-
-### Adding New Filter Options
-
-Update the filter buttons in [`student-portfolio-manager.js`](Webpage/student-portfolio-manager.js):
-
-```javascript
-updateFilterButtons() {
-    const filterButtonsContainer = document.querySelector(".filter-buttons");
-    if (filterButtonsContainer) {
-        filterButtonsContainer.innerHTML = `
-            <button class="filter-btn active" data-filter="all">All Students</button>
-            <button class="filter-btn" data-filter="batch1">Batch 1</button>
-            <button class="filter-btn" data-filter="batch2">Batch 2</button>
-            <button class="filter-btn" data-filter="your-filter">Your Filter</button>
-        `;
-    }
-}
-```
-
-### Styling Student Cards
-
-Customize individual student cards:
-
-```css
-.student-card {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    /* Add your custom styles */
-}
-
-.student-card:hover {
-    transform: translateY(-12px) rotateX(5deg) rotateY(5deg);
-    /* Custom hover effects */
-}
-```
-
-## 🔧 Configuration
 
 ### Student Data Configuration
 
-Update student information in [`student-portfolio-manager.js`](Webpage/student-portfolio-manager.js):
-
-```javascript
-loadStudentData() {
-    this.studentDirectories = [
-        // ACTIVE STUDENTS (Folders uploaded)
-        {
-            folderName: "Student_Folder_Name",
-            name: "Student Full Name",
-            course: "MCA", // or "B.Tech CSE"
-            batch: 1, // or 2
-            status: "active", // or "pending"
-            resumeFile: "Student_Resume.html",
-            profileImage: "studentPic.jpg",
-            uploadDate: "2025-01-15",
-            specialization: "Full Stack MERN Development",
-        },
-        // Add more students here...
-    ];
-}
-```
-
-### Batch Configuration
-
-Configure batch settings:
-
-```javascript
-this.config = {
-    basePath: "../", // Path to student folders
-    batches: {
-        1: { name: "Batch 1", color: "#4CAF50" },
-        2: { name: "Batch 2", color: "#2196F3" },
-        // Add more batches as needed
-    },
-};
-```
+Update student information in the [`ResumeInteractions`](Sudhanshu_Sakhare/js/interactions.js) class and portfolio files like [`Sudhanshu_Sakhare.html`](Sudhanshu_Sakhare/Sudhanshu_Sakhare.html).
 
 ## 🎯 Key Components
 
-### 1. Portfolio Manager (`student-portfolio-manager.js`)
-- **StudentPortfolioManager Class**: Main application controller
+### 1. Portfolio Manager System
+
 - **Student Data Management**: Handles student information and status
 - **Filtering & Search**: Real-time filtering and search functionality
 - **Card Rendering**: Dynamic generation of student cards
 - **Statistics**: Live counter animations and data tracking
 
-### 2. Styling System (`student-portfolio-styles.css`)
-- **Modern Card Design**: Glassmorphism and shadow effects
-- **Unique Button Styling**: Revolutionary portfolio button design
-- **Responsive Layout**: Mobile-first responsive design
-- **Animation Library**: CSS animations and transitions
-- **Theme Support**: Light theme with dark mode ready
+### 2. Individual Portfolios
 
-### 3. Individual Portfolios
-- **Interactive Design**: Modern, animated portfolio pages
-- **Social Integration**: Social media links and contact info
+- **Interactive Design**: Modern, animated portfolio pages powered by [`ResumeAnimations`](Sudhanshu_Sakhare/js/animations.js)
+- **Social Integration**: Social media links and contact info via [`ResumeInteractions`](Sudhanshu_Sakhare/js/interactions.js)
 - **Project Showcase**: Interactive project galleries
-- **Skill Visualization**: Animated skill displays
-- **Professional Layout**: Print-ready resume format
+- **Professional Layout**: Print-ready resume format with [`SudhanshuCss.css`](Sudhanshu_Sakhare/SudhanshuCss.css)
 
 ## 📱 Responsive Design
 
 The system is fully responsive across all devices:
 
-### Desktop (1200px+)
-- Two-column batch layout
-- Full feature set
-- Advanced hover effects
-- Detailed student cards
-
-### Tablet (768px - 1199px)
-- Single-column layout
-- Simplified animations
-- Touch-friendly interactions
-- Optimized button sizes
-
-### Mobile (< 768px)
-- Stack layout
-- Reduced animations
-- Large touch targets
-- Simplified navigation
+- **Desktop (1200px+)**: Full feature set with advanced hover effects
+- **Tablet (768px - 1199px)**: Touch-friendly interactions with optimized layouts
+- **Mobile (< 768px)**: Stack layout with simplified navigation
 
 ## 🎨 Animation Features
 
 ### Card Animations
+
 - **Entrance**: Slide-in with scale effect
 - **Hover**: 3D tilt and lift effects
 - **Image**: Scale and glow animations
 - **Particles**: Floating particle effects
 
-### Button Animations
-- **Gradient Shift**: Moving gradient background
-- **Icon Rotation**: 360° rocket icon rotation
-- **Particle System**: 4 floating particles
-- **Glow Effect**: Sliding light animation
-- **Scale Transform**: Smooth scale and lift
+### Portfolio Features
 
-### Page Transitions
-- **Counter Animation**: Smooth number counting
-- **Filter Transitions**: Fade and slide effects
-- **Search Results**: Real-time filter animations
+- **Interactive FAB Menu**: Floating action button with multiple options
+- **Social Connect Modal**: Animated social media connection popup
+- **Theme Toggle**: Dynamic theme switching capability
+- **Print Optimization**: Print-ready layouts with optimized styling
 
 ## 🔍 Browser Support
 
-| Browser | Support | Version |
-|---------|---------|---------|
-| Chrome  | ✅ Full | 90+ |
-| Firefox | ✅ Full | 88+ |
-| Safari  | ✅ Full | 14+ |
-| Edge    | ✅ Full | 90+ |
+| Browser       | Support | Version |
+| ------------- | ------- | ------- |
+| Chrome        | ✅ Full | 90+     |
+| Firefox       | ✅ Full | 88+     |
+| Safari        | ✅ Full | 14+     |
+| Edge          | ✅ Full | 90+     |
 | Mobile Safari | ✅ Full | iOS 14+ |
-| Chrome Mobile | ✅ Full | 90+ |
+| Chrome Mobile | ✅ Full | 90+     |
 
 ## 🐛 Troubleshooting
 
 ### Common Issues
 
 1. **Styles Not Loading**
+
    ```
    Problem: CSS files not found
    Solution: Check file paths in HTML head section
    ```
 
 2. **JavaScript Errors**
+
    ```
    Problem: Student data not displaying
    Solution: Check browser console for errors
    ```
 
 3. **Images Not Displaying**
+
    ```
    Problem: Profile pictures not showing
    Solution: Verify image paths and file names
@@ -393,73 +304,34 @@ refreshPortfolios();
 
 ## 🤝 Contributing
 
-We welcome contributions from students and faculty! Here's how to contribute:
+We welcome contributions from students and faculty! Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
 
-### For Students
-1. **Add Your Portfolio**
-   - Create your portfolio folder
-   - Follow the naming conventions
-   - Submit a pull request
+### Quick ways to contribute:
 
-2. **Improve Design**
-   - Suggest UI/UX improvements
-   - Add new animation effects
-   - Enhance responsiveness
-
-### For Developers
-1. **Fork the Repository**
-2. **Create Feature Branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit Changes**
-   ```bash
-   git commit -m 'Add amazing feature'
-   ```
-4. **Push to Branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. **Open Pull Request**
-
-### Contribution Guidelines
-- Follow existing code style
-- Test on multiple browsers
-- Update documentation
-- Add comments for complex code
+- Add your portfolio
+- Report bugs
+- Suggest improvements
+- Enhance documentation
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2025 JDCOEM Student Portfolio System
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## 🎓 Credits
 
 ### 👨‍💻 Developers
+
 - **[Sudhanshu R Sakhare](https://www.linkedin.com/in/sudhanshu-sakhare-873598189/)** - Lead Developer, Full Stack MERN Developer
-- **[Mansi Nandanwar](https://www.linkedin.com/in/mansi-nandanwar)** - Co-Developer, Frontend Specialist
+- **[Mansi Nandanwar](http://www.linkedin.com/in/mansi-nandanwar-25037326a)** - Co-Developer, Frontend Specialist
 
 ### 🏫 Institution
+
 - **J.D. College of Engineering and Management**, Nagpur, Maharashtra, India
 - **Department of Computer Applications**
 - **Master of Computer Applications (MCA) Program**
 
 ### 👨‍🏫 Mentor
+
 - **T. Varnan (T. Vellaivaranan)** - Java Full Stack Trainer
 - **20+ years** of experience in Information Technology
 - **Comet Softwares**, Chennai, India
@@ -467,41 +339,41 @@ copies or substantial portions of the Software.
 ## 📞 Support & Contact
 
 ### 🆘 Need Help?
+
 - **Technical Issues**: [Create an issue](https://github.com/your-repo/issues)
 - **Feature Requests**: [Submit a request](https://github.com/your-repo/discussions)
 - **General Questions**: [Contact us](mailto:sudhanshusakhare808@gmail.com)
 
 ### 📧 Contact Information
+
 - **Lead Developer**: [sudhanshusakhare808@gmail.com](mailto:sudhanshusakhare808@gmail.com)
 - **Phone**: +91 9284272018
 - **Location**: Nagpur, Maharashtra, India
 
 ### 🌐 Links
-- **Portfolio**: [View Live Portfolio](https://sudhanshu-portfolio.netlify.app)
+
+- **Portfolio**: [View Live Portfolio](https://sudhanshu-interactive-resume.netlify.app/)
 - **GitHub**: [github.com/Sudhanshu-SRS](https://github.com/Sudhanshu-SRS)
 - **LinkedIn**: [linkedin.com/in/sudhanshu-sakhare-873598189](https://www.linkedin.com/in/sudhanshu-sakhare-873598189/)
 
 ## 🚀 Future Enhancements
 
 ### Planned Features
+
 - [ ] **Admin Dashboard**: Complete admin panel for managing students
 - [ ] **Database Integration**: Move from static data to database
 - [ ] **User Authentication**: Login system for students and faculty
 - [ ] **Portfolio Templates**: Multiple portfolio templates for students
 - [ ] **Export Features**: PDF export of portfolios
 - [ ] **Analytics**: Portfolio view tracking and analytics
-- [ ] **Notification System**: Email notifications for updates
-- [ ] **Version Control**: Portfolio version history
-- [ ] **Collaboration Tools**: Team project showcases
-- [ ] **Assessment Module**: Skill assessment and certification tracking
 
 ### Technical Improvements
+
 - [ ] **Performance Optimization**: Lazy loading and caching
 - [ ] **PWA Support**: Progressive Web App features
 - [ ] **Dark Mode**: Complete dark theme implementation
 - [ ] **Accessibility**: WCAG 2.1 compliance
 - [ ] **Internationalization**: Multi-language support
-- [ ] **API Integration**: RESTful API for data management
 
 ---
 
@@ -514,6 +386,6 @@ copies or substantial portions of the Software.
 
 **Made with ❤️ by JDCOEM MCA Students**
 
-*Empowering the next generation of Full Stack Developers*
+_Empowering the next generation of Full Stack Developers_
 
 </div>
