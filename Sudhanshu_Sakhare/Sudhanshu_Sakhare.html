@@ -3,16 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sudhanshu R Sakhare</title>
+    <title>Sudhanshu R Sakhare - Interactive Resume</title>
+
+    <!-- Preload critical resources with error handling -->
+    <link rel="preload" href="./sudhanshuPic.jpg" as="image" crossorigin="anonymous" />
+    <link rel="preload" href="./SudhanshuCss.css" as="style" />
+    <link rel="preload" href="./js/main.js" as="script" />
+
+    <!-- Fonts with fallback -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
       rel="stylesheet"
+      crossorigin="anonymous"
     />
+
+    <!-- Font Awesome with integrity check -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="SudhanshuCss.css" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./SudhanshuCss.css" />
+    
+    <!-- SEO and Social Media Tags -->
+    <meta name="description" content="Sudhanshu R Sakhare - Full Stack MERN Developer with 2+ years of experience in web development, React.js, Node.js, and modern technologies." />
+    <meta name="keywords" content="Full Stack Developer, MERN Stack, React.js, Node.js, Web Developer, JavaScript, Resume" />
+    <meta name="author" content="Sudhanshu R Sakhare" />
+    
+    <!-- Open Graph Tags for better sharing -->
+    <meta property="og:title" content="Sudhanshu R Sakhare - Full Stack Developer" />
+    <meta property="og:description" content="Interactive resume showcasing full stack development skills and projects" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="./sudhanshuPic.jpg" />
   </head>
   <body>
     <div class="animated-bg"></div>
@@ -28,6 +55,7 @@
               alt="Sudhanshu Profile"
               class="profile-image"
               id="profileImage"
+              loading="lazy"
             />
             <div class="profile-overlay">
               <i class="fas fa-camera"></i>
@@ -468,536 +496,27 @@
       </button>
     </div>
 
+    <!-- External JavaScript Files with error handling -->
+    <script src="./js/animations.js" defer onerror="console.log('animations.js failed to load')"></script>
+    <script src="./js/interactions.js" defer onerror="console.log('interactions.js failed to load')"></script>
+    <script src="./js/main.js" defer onerror="console.log('main.js failed to load')"></script>
+    
+    <!-- Fallback script if external files fail -->
     <script>
-      // Wait for DOM to be fully loaded
-      document.addEventListener("DOMContentLoaded", function () {
-        // Floating Action Button functionality
-        let fabMenuOpen = false;
-        let currentTheme = "default";
-
-        // Make functions globally accessible
-        window.toggleFabMenu = function () {
-          const fabOptions = document.getElementById("fabOptions");
-          const fabIcon = document.getElementById("fabIcon");
-
-          if (fabMenuOpen) {
-            fabOptions.classList.remove("active");
-            fabIcon.className = "fas fa-plus";
-            fabMenuOpen = false;
-          } else {
-            fabOptions.classList.add("active");
-            fabIcon.className = "fas fa-times";
-            fabMenuOpen = true;
-          }
-        };
-
-        // Enhanced particle system
-        function createParticle() {
-          const particleSystem = document.getElementById("particleSystem");
-          if (!particleSystem) return;
-
-          const particle = document.createElement("div");
-          particle.classList.add("particle");
-          particle.style.left = Math.random() * 100 + "vw";
-          particle.style.animationDelay = Math.random() * 8 + "s";
-          particle.style.animationDuration = Math.random() * 3 + 8 + "s";
-          particleSystem.appendChild(particle);
-
-          // Remove particle after animation
-          setTimeout(() => {
-            if (particle.parentNode) {
-              particle.remove();
-            }
-          }, 11000);
-        }
-
-        // Create particles continuously
-        setInterval(createParticle, 300);
-
-        // Copy to clipboard functionality
-        window.copyToClipboard = function (text) {
-          if (navigator.clipboard) {
-            navigator.clipboard
-              .writeText(text)
-              .then(function () {
-                showNotification("Copied to clipboard: " + text);
-              })
-              .catch(function () {
-                // Fallback for older browsers
-                fallbackCopyTextToClipboard(text);
+      // Basic fallback functionality
+      window.addEventListener('load', function() {
+        if (typeof window.resumeApp === 'undefined') {
+          console.log('Using fallback functionality');
+          // Add basic click handlers if JS files failed to load
+          document.querySelectorAll('[onclick]').forEach(element => {
+            const onclick = element.getAttribute('onclick');
+            if (onclick.includes('copyToClipboard')) {
+              element.addEventListener('click', function() {
+                console.log('Copy functionality requires external scripts');
               });
-          } else {
-            fallbackCopyTextToClipboard(text);
-          }
-        };
-
-        // Fallback copy function
-        function fallbackCopyTextToClipboard(text) {
-          const textArea = document.createElement("textarea");
-          textArea.value = text;
-          document.body.appendChild(textArea);
-          textArea.focus();
-          textArea.select();
-
-          try {
-            document.execCommand("copy");
-            showNotification("Copied to clipboard: " + text);
-          } catch (err) {
-            showNotification("Failed to copy text");
-          }
-
-          document.body.removeChild(textArea);
-        }
-
-        // Enhanced notification system
-        function showNotification(message) {
-          const notification = document.createElement("div");
-          notification.innerHTML = `
-      <div style="
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, #10b981, #047857);
-        color: white;
-        padding: 15px 20px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
-        z-index: 10000;
-        font-size: 14px;
-        font-weight: 600;
-        animation: slideIn 0.5s ease, fadeOut 0.5s ease 2.5s;
-        border: 2px solid #34d399;
-      ">
-        <i class="fas fa-check-circle" style="margin-right: 10px; font-size: 16px;"></i>
-        ${message}
-      </div>
-    `;
-
-          document.body.appendChild(notification);
-
-          setTimeout(() => {
-            if (notification.parentNode) {
-              notification.remove();
-            }
-          }, 3000);
-        }
-
-        // Enhanced profile image functionality with social media message
-        window.changeProfileImage = function () {
-          // Create and show social media connect message
-          showSocialConnectMessage();
-
-          // Add a subtle animation to the profile image
-          const currentImage = document.getElementById("profileImage");
-          if (currentImage) {
-            currentImage.style.transform = "scale(0.95)";
-            setTimeout(() => {
-              currentImage.style.transform = "scale(1)";
-            }, 150);
-          }
-        };
-
-        // Function to show social media connect message
-        function showSocialConnectMessage() {
-          // Remove any existing social message
-          const existingMessage = document.getElementById(
-            "socialConnectMessage"
-          );
-          if (existingMessage) {
-            existingMessage.remove();
-          }
-
-          // Create the social connect message
-          const socialMessage = document.createElement("div");
-          socialMessage.id = "socialConnectMessage";
-          socialMessage.innerHTML = `
-            <div style="
-              position: fixed;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              background: linear-gradient(135deg, #667eea, #764ba2);
-              color: white;
-              padding: 30px;
-              border-radius: 20px;
-              box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-              z-index: 10001;
-              text-align: center;
-              min-width: 320px;
-              max-width: 90vw;
-              animation: socialModalSlideIn 0.5s ease;
-              backdrop-filter: blur(10px);
-              border: 2px solid rgba(255, 255, 255, 0.2);
-            ">
-              <div style="margin-bottom: 20px;">
-                <h3 style="margin: 0 0 10px 0; font-size: 1.4rem; font-weight: 600;">
-                  <i class="fas fa-handshake" style="margin-right: 10px; color: #ffd700;"></i>
-                  Let's Connect!
-                </h3>
-                <p style="margin: 0; font-size: 1rem; opacity: 0.9;">
-                  Follow me on these social platforms:
-                </p>
-              </div>
-              
-              <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 20px;">
-                <a href="https://github.com/Sudhanshu-SRS" target="_blank" style="
-                  display: flex;
-                  align-items: center;
-                  gap: 8px;
-                  padding: 10px 15px;
-                  background: #333;
-                  color: white;
-                  text-decoration: none;
-                  border-radius: 25px;
-                  font-size: 0.9rem;
-                  font-weight: 500;
-                  transition: all 0.3s ease;
-                  border: 2px solid transparent;
-                " onmouseover="this.style.background='#24292e'; this.style.transform='translateY(-2px)'; this.style.borderColor='#ffd700';" onmouseout="this.style.background='#333'; this.style.transform='translateY(0)'; this.style.borderColor='transparent';">
-                  <i class="fab fa-github" style="font-size: 1.1rem;"></i>
-                  GitHub
-                </a>
-                
-                <a href="https://www.linkedin.com/in/sudhanshu-sakhare-873598189/" target="_blank" style="
-                  display: flex;
-                  align-items: center;
-                  gap: 8px;
-                  padding: 10px 15px;
-                  background: #0077b5;
-                  color: white;
-                  text-decoration: none;
-                  border-radius: 25px;
-                  font-size: 0.9rem;
-                  font-weight: 500;
-                  transition: all 0.3s ease;
-                  border: 2px solid transparent;
-                " onmouseover="this.style.background='#005885'; this.style.transform='translateY(-2px)'; this.style.borderColor='#ffd700';" onmouseout="this.style.background='#0077b5'; this.style.transform='translateY(0)'; this.style.borderColor='transparent';">
-                  <i class="fab fa-linkedin" style="font-size: 1.1rem;"></i>
-                  LinkedIn
-                </a>
-                
-                <a href="https://x.com/Sudhanshu_808" target="_blank" style="
-                  display: flex;
-                  align-items: center;
-                  gap: 8px;
-                  padding: 10px 15px;
-                  background: #000;
-                  color: white;
-                  text-decoration: none;
-                  border-radius: 25px;
-                  font-size: 0.9rem;
-                  font-weight: 500;
-                  transition: all 0.3s ease;
-                  border: 2px solid transparent;
-                " onmouseover="this.style.background='#333'; this.style.transform='translateY(-2px)'; this.style.borderColor='#ffd700';" onmouseout="this.style.background='#000'; this.style.transform='translateY(0)'; this.style.borderColor='transparent';">
-                  <span style="font-size: 1.1rem; font-weight: bold;">𝕏</span>
-                  X (Twitter)
-                </a>
-                
-                <a href="https://www.instagram.com/sudhanshu_sakhare/" target="_blank" style="
-                  display: flex;
-                  align-items: center;
-                  gap: 8px;
-                  padding: 10px 15px;
-                  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-                  color: white;
-                  text-decoration: none;
-                  border-radius: 25px;
-                  font-size: 0.9rem;
-                  font-weight: 500;
-                  transition: all 0.3s ease;
-                  border: 2px solid transparent;
-                " onmouseover="this.style.transform='translateY(-2px)'; this.style.borderColor='#ffd700';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='transparent';">
-                  <i class="fab fa-instagram" style="font-size: 1.1rem;"></i>
-                  Instagram
-                </a>
-              </div>
-              
-              <div style="display: flex; justify-content: center; gap: 10px;">
-                <button onclick="closeSocialMessage()" style="
-                  padding: 8px 20px;
-                  background: rgba(255, 255, 255, 0.2);
-                  color: white;
-                  border: 2px solid rgba(255, 255, 255, 0.3);
-                  border-radius: 20px;
-                  cursor: pointer;
-                  font-size: 0.9rem;
-                  font-weight: 500;
-                  transition: all 0.3s ease;
-                " onmouseover="this.style.background='rgba(255, 255, 255, 0.3)'; this.style.borderColor='rgba(255, 255, 255, 0.5)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'; this.style.borderColor='rgba(255, 255, 255, 0.3)';">
-                  <i class="fas fa-times" style="margin-right: 5px;"></i>
-                  Close
-                </button>
-                
-                <button onclick="copyContactInfo()" style="
-                  padding: 8px 20px;
-                  background: #10b981;
-                  color: white;
-                  border: 2px solid #10b981;
-                  border-radius: 20px;
-                  cursor: pointer;
-                  font-size: 0.9rem;
-                  font-weight: 500;
-                  transition: all 0.3s ease;
-                " onmouseover="this.style.background='#047857'; this.style.borderColor='#047857';" onmouseout="this.style.background='#10b981'; this.style.borderColor='#10b981';">
-                  <i class="fas fa-copy" style="margin-right: 5px;"></i>
-                  Copy Email
-                </button>
-              </div>
-            </div>
-            
-            <div style="
-              position: fixed;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background: rgba(0, 0, 0, 0.5);
-              z-index: 10000;
-              animation: socialOverlayFadeIn 0.5s ease;
-              backdrop-filter: blur(5px);
-            " onclick="closeSocialMessage()">
-            </div>
-          `;
-
-          document.body.appendChild(socialMessage);
-
-          // Auto-close after 10 seconds
-          setTimeout(() => {
-            if (document.getElementById("socialConnectMessage")) {
-              closeSocialMessage();
-            }
-          }, 10000);
-        }
-
-        // Function to close social media message
-        window.closeSocialMessage = function () {
-          const socialMessage = document.getElementById("socialConnectMessage");
-          if (socialMessage) {
-            socialMessage.style.animation = "socialModalSlideOut 0.3s ease";
-            setTimeout(() => {
-              socialMessage.remove();
-            }, 300);
-          }
-        };
-
-        // Function to copy contact info
-        window.copyContactInfo = function () {
-          const contactInfo = `
-🚀 Let's Connect!
-
-📧 Email: sudhanshusakhare808@gmail.com
-📱 Phone: +91 9284272018
-📍 Location: Nagpur, India
-
-🌐 Social Links:
-• GitHub: https://github.com/Sudhanshu-SRS
-• LinkedIn: https://www.linkedin.com/in/sudhanshu-sakhare-873598189/
-• X (Twitter): https://x.com/Sudhanshu_808
-• Instagram: https://www.instagram.com/sudhanshu_sakhare/
-
-💼 Full Stack MERN Developer & Software Engineer
-  `;
-
-          copyToClipboard(contactInfo);
-          closeSocialMessage();
-        };
-
-        // Theme toggle functionality
-        window.toggleTheme = function () {
-          const body = document.body;
-          const themes = ["default", "dark", "colorful"];
-          const currentIndex = themes.indexOf(currentTheme);
-          const nextIndex = (currentIndex + 1) % themes.length;
-          currentTheme = themes[nextIndex];
-
-          body.className = currentTheme + "-theme";
-          showNotification(`Switched to ${currentTheme} theme!`);
-        };
-
-        // Download resume functionality
-        window.downloadResume = function () {
-          showNotification("Preparing resume for download...");
-          setTimeout(() => {
-            window.print();
-          }, 1000);
-        };
-
-        // Print resume functionality
-        window.printResume = function () {
-          window.print();
-        };
-
-        // Share resume functionality
-        window.shareResume = function () {
-          if (navigator.share) {
-            navigator
-              .share({
-                title: "Sudhanshu - Interactive Resume",
-                text: "Check out my interactive resume!",
-                url: window.location.href,
-              })
-              .catch((err) => {
-                console.log("Error sharing:", err);
-                copyToClipboard(window.location.href);
-                showNotification("Resume link copied to clipboard!");
-              });
-          } else {
-            copyToClipboard(window.location.href);
-            showNotification("Resume link copied to clipboard!");
-          }
-        };
-
-        // Enhanced social link interactions
-        document.querySelectorAll(".social-link").forEach((link) => {
-          link.addEventListener("click", function (e) {
-            this.style.transform = "scale(0.9)";
-            setTimeout(() => {
-              this.style.transform = "";
-            }, 150);
-          });
-        });
-
-        // Enhanced skill item interactions
-        document.querySelectorAll(".skill-item").forEach((skill) => {
-          skill.addEventListener("click", function () {
-            const skillName = this.textContent;
-            showNotification(`You clicked on ${skillName}!`);
-          });
-        });
-
-        // Add enhanced CSS animations
-        const animationStyles = document.createElement("style");
-        animationStyles.textContent = `
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    
-    @keyframes fadeOut {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
-    }
-    
-    @keyframes bounceIn {
-      0% {
-        transform: scale(0.3);
-        opacity: 0;
-      }
-      50% {
-        transform: scale(1.05);
-      }
-      70% {
-        transform: scale(0.9);
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    @keyframes rainbow {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
-    }
-
-    .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      animation: float 8s linear infinite;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    .fab-options.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .fab-options {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
-    }
-  `;
-        document.head.appendChild(animationStyles);
-
-        // Animate sections on scroll
-        const sections = document.querySelectorAll(".section");
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.style.animation = "bounceIn 0.8s ease";
             }
           });
-        });
-
-        sections.forEach((section) => {
-          observer.observe(section);
-        });
-
-        // Add click effects to various elements
-        document
-          .querySelectorAll(".contact-item, .cert-item, .achievement-list li")
-          .forEach((item) => {
-            item.addEventListener("click", function () {
-              this.style.animation = "none";
-              setTimeout(() => {
-                this.style.animation = "rainbow 1s ease";
-              }, 10);
-            });
-          });
-
-        // Close FAB menu when clicking outside
-        document.addEventListener("click", function (e) {
-          const fabMenu = document.querySelector(".floating-menu");
-          if (fabMenu && !fabMenu.contains(e.target) && fabMenuOpen) {
-            toggleFabMenu();
-          }
-        });
-
-        // Enhanced keyboard navigation
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && fabMenuOpen) {
-            toggleFabMenu();
-          }
-          if (e.ctrlKey && e.key === "p") {
-            e.preventDefault();
-            printResume();
-          }
-        });
-
-        console.log("JavaScript loaded successfully!");
+        }
       });
     </script>
   </body>
