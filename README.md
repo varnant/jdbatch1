@@ -18,10 +18,6 @@ _The main dashboard showing all student portfolios with filtering options_
 ![Student Card](screenshots/student-card.png)
 _Individual student card with unique "View Portfolio" button and animations_
 
-### Portfolio Button Animation
-
-![Portfolio Button](screenshots/portfolio-button.gif)
-_Unique portfolio button with gradient effects, particles, and hover animations_
 
 ### Filter System
 
