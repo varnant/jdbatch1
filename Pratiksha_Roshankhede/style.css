@@ -1,0 +1,204 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 850px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+header.resume-header {
+  text-align: left;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #181530; /* Thin blue line instead of broad filled */
+  background-color: transparent;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 60%;
+  border: 3px solid #0077b6;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  font-size: 60px;
+  margin: 8px 0;
+  color: #4482d3;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 30px;
+  margin: 0;
+  color: #0077b6;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 4px 0;
+}
+
+a {
+  color: #0077b6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th {
+  background-color: #f0f8ff;
+  color: #023e8a;
+  font-weight: 600;
+}
+
+td {
+  background-color: #fdfdfd;
+}
+
+ul {
+  margin: 12px 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+ul li {
+  margin-bottom: 6px;
+}
+
+footer {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #0077b6;  /* Slim blue line instead of thick border */
+  text-align: left;
+  color: #444;
+  font-size: 16px;
+}
+
+.profile-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #0077b6;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.resume-header {
+  padding: 20px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #0077b6;
+  background-color: #f9f9f9;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #0077b6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #0077b6;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.info h1 {
+  margin: 5px 0;
+  font-size: 28px;
+  color: #023e8a;
+}
+
+.info p {
+  margin: 4px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+section h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  position: relative;
+  color: #023e8a;
+  padding-bottom: 5px;
+}
+
+/* Light blue underline */
+section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100px; /* Adjust the width as needed */
+  background-color: #89CFF0; /* Light blue */
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #0077b6;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+/* Light blue underline under h3 section titles */
+h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 850px; /* You can increase/decrease the underline length */
+  height: 1.5px;
+  background-color: #3884a7; /* Light blue */
+  border-radius: 2px;
+}
