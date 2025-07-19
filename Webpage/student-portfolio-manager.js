@@ -224,6 +224,18 @@ class StudentPortfolioManager {
         specialization: "Java Full Stack Development",
       },
       {
+        folderName: "Jayant_Resume",
+        name: "Jayant Meshram",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "Resume_Fullstack.html",
+        profileImage: "Profile.jpeg",
+        uploadDate: "2025-01-20",
+        specialization: "Java Full Stack Development",
+      },
+
+      {
         folderName: "Rupali_Resume",
         name: "Rupali",
         course: "MCA",
