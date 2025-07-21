@@ -290,6 +290,17 @@ class StudentPortfolioManager {
         uploadDate: "2025-07-21",
         specialization: "Java Full Stack Development",
       },
+      {
+        folderName: "Vaidehi_Bhilawe",
+        name: "Vaidehi Bhilawe",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "Vaidehiresume.html",
+        profileImage: "Vaidehi.jpg",
+        uploadDate: "2025-07-21",
+        specialization: "Java Full Stack Development",
+      },
       
 
       // ADD MORE STUDENTS HERE AS THEY UPLOAD FOLDERS
