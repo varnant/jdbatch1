@@ -279,6 +279,18 @@ class StudentPortfolioManager {
         uploadDate: "2025-01-20",
         specialization: "Java Full Stack Development",
       },
+      {
+        folderName: "Ishika_Wadichar",
+        name: "Ishika Wadichar",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "Ishika.html",
+        profileImage: "Ishika.jpg",
+        uploadDate: "2025-07-21",
+        specialization: "Java Full Stack Development",
+      },
+      
 
       // ADD MORE STUDENTS HERE AS THEY UPLOAD FOLDERS
     ];
