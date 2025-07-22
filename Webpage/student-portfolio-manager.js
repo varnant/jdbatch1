@@ -309,9 +309,32 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "resume.html",
         profileImage: "Profilephoto.jpeg",
-        uploadDate: "2025-07-21",
+        uploadDate: "2025-07-22",
         specialization: "Java Full Stack Development",
       },
+       {
+        folderName: "Prashika_Thool",
+        name: "Prashika Thool",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "prashika.html",
+        profileImage: "prashika.jpg",
+        uploadDate: "2025-07-22",
+        specialization: "Java Full Stack Development",
+      },
+      {
+        folderName: "Vaibhavi_Ghoom",
+        name: "Vaibhavi Ghoom",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "vaibhavi.html",
+        profileImage: "GHOMVS.jpg",
+        uploadDate: "2025-07-22",
+        specialization: "Java Full Stack Development",
+      },
+
 
       // ADD MORE STUDENTS HERE AS THEY UPLOAD FOLDERS
     ];
