@@ -193,8 +193,6 @@ class StudentPortfolioManager {
         specialization: "Java Full Stack Development",
       },
 
-
-
       // PENDING STUDENTS (Awaiting folder upload)
       // Batch 1 Students
       {
@@ -208,8 +206,6 @@ class StudentPortfolioManager {
         uploadDate: "2025-07-20",
         specialization: "Java Full Stack Development",
       },
-      
-      
 
       // Batch 2 Students
       {
@@ -302,6 +298,39 @@ class StudentPortfolioManager {
         specialization: "Java Full Stack Development",
       },
       {
+        folderName: "Achal_katkar",
+        name: "Achal Katkar",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "AachalResume.html",
+        profileImage: "aachal-profile.jpg",
+        uploadDate: "2025-07-21",
+        specialization: "Java Full Stack Development",
+      },
+      {
+        folderName: "Sarang_Marotkar",
+        name: "Sarang Marotkar",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "Sarang_Marotkar_MCA.html",
+        profileImage: "sarang.jpg",
+        uploadDate: "2025-07-21",
+        specialization: "Java Full Stack Development",
+      },
+      {
+        folderName: "Varsha_Mohod_MCA",
+        name: "Varsha Mohod",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "Varsha_Mohod_RESUME.html",
+        profileImage: "img1.jpeg",
+        uploadDate: "2025-07-21",
+        specialization: "Java Full Stack Development",
+      },
+      {
         folderName: "Purwa_ughade_Ds",
         name: "Purwa Ughade",
         course: "MCA",
@@ -312,7 +341,7 @@ class StudentPortfolioManager {
         uploadDate: "2025-07-22",
         specialization: "Java Full Stack Development",
       },
-       {
+      {
         folderName: "Prashika_Thool",
         name: "Prashika Thool",
         course: "MCA",
@@ -334,7 +363,6 @@ class StudentPortfolioManager {
         uploadDate: "2025-07-22",
         specialization: "Java Full Stack Development",
       },
-
 
       // ADD MORE STUDENTS HERE AS THEY UPLOAD FOLDERS
     ];
@@ -372,15 +400,16 @@ class StudentPortfolioManager {
       /[^a-zA-Z0-9]/g,
       "-"
     )}`;
-      // Format date as DD-MM-YYYY
+    // Format date as DD-MM-YYYY
     const formatDate = (dateString) => {
-      if (dateString === "pending" || dateString === "active") return dateString;
-      
+      if (dateString === "pending" || dateString === "active")
+        return dateString;
+
       const date = new Date(dateString);
-      const day = String(date.getDate()).padStart(2, '0');
-      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(date.getMonth() + 1).padStart(2, "0");
       const year = date.getFullYear();
-      
+
       return `${day}-${month}-${year}`;
     };
 
@@ -479,9 +508,7 @@ class StudentPortfolioManager {
                   student.uploadDate !== "pending"
                     ? `<div class="upload-date">
                         <i class="fas fa-calendar"></i>
-                        Uploaded: ${formatDate(
-                          student.uploadDate
-                        )}
+                        Uploaded: ${formatDate(student.uploadDate)}
                     </div>`
                     : `<div class="pending-status">
                         <i class="fas fa-upload"></i>
