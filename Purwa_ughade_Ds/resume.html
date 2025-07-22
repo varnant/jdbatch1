@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purva Ughade -Resume</title>
+    
+    <style>
+        :root {
+            --primary-color: #2a5c84;  
+            --secondary-color: #f9f9f9;
+            --text-color: #333;
+            --light-text-color: #555;
+            --heading-color: #222;
+            --border-color: #ddd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 850px;  
+            margin: 2rem auto;
+            padding: 2.5rem; 
+            background: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+            border-radius: 8px; 
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .profile-image {
+            width: 130px; 
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            overflow: hidden;
+            margin-left: 2rem; 
+            flex-shrink: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header h1 {
+            font-size: 2.5rem; 
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .header h3 {
+            font-size: 1.3rem;
+            color: var(--light-text-color);
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem; 
+            margin: 1.2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-size: 1.1rem; 
+            color: var(--light-text-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.2rem 0;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.4rem; 
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #1a3a5a;
+        }
+
+        .section {
+            margin: 3rem 0; 
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.8rem; 
+            margin-bottom: 1.8rem; 
+            font-size: 2rem; 
+            font-weight: bold;  
+            letter-spacing: 1px;
+        }
+
+        .section-content {
+            margin-left: 1rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 1.8rem;
+            padding-left: 0.5rem; 
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2rem; 
+            color: var(--heading-color);
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+
+        .timeline-item p {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            margin-bottom: 0.7rem 
+        }
+
+        .timeline-item ul {
+            margin-left: 2rem; 
+            margin-top: 0.5rem;
+            list-style-position: inside; 
+        }
+
+        .timeline-item ul li {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 0.4rem;
+            padding-left: 0.2rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 1.5rem; 
+        }
+
+        .skill-item {
+            background: var(--secondary-color);
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem; 
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        .certification-item {
+            margin-bottom: 1.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .certification-item h3 {
+            font-size: 1.2rem;
+            color: var(--heading-color);
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+
+        .certification-item p {
+            font-size: 1rem;
+            color: var(--light-text-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .certification-item ul {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            list-style-position: inside;
+        }
+
+        .certification-item ul li {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 0.4rem;
+            padding-left: 0.2rem;
+        }
+
+        .interests-list, .languages-list {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .interest-item, .language-item {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+            border-radius: 18px;
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .profile-image {
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1>Purva Vinodrao Ughade</h1>
+                <h3>Fullstack Developer</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        
+                        <span> At post Loni, Tq.Warud, Dist.Amaravati, Maharashtra</span>
+                    </div>
+                    <div class="contact-item">
+                        
+                        <span>+91 9890735517</span>
+                    </div>
+                    <div class="contact-item">
+                       
+                        <span>purvaughade58@gmail.com</span>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="profile-image">
+                <img src="profile photo.jpeg" alt="Purva Ughade">
+            </div>
+        </header>
+        <section class="section">
+            <h2 class="section-title">Summary</h2>
+            <div class="section-content">
+                <p>Passionate Full Stack Developer with hands-on experience in building responsive web app. Quick learner with strong problem-solving skills and a drive to build clean, scalable, and user-friendly solutions. Eager to contribute and grow in a collaborative development environment.</p>
+            </div>
+        </section>
+<section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="section-content">
+               
+                <div class="timeline-item">
+                    <h3>Bachelor of Data Science</h3>
+                    <p>JD College of Engineering and Management,Nagpur</p>
+                    <p>2022 - 2026 | CGPA: 8.86</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>12th (HSC)</h3>
+                    <p>Mahatma Fule College,Warud</p>
+                    <p>2022 | Percentage:74.67%</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>10th (SSC)</h3>
+                    <p>SMT R.C.High School,Loni</p>
+                    <p>2020 | Percentage:89.80%</p>
+                </div>
+            </div>
+        </section>
+     <section class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="section-content">
+                <div class="timeline-item">
+                    <h3>Amazon Clone</h3>
+                    <p> July/01 – July/10- 2025</p>
+                    <ul>
+                        <li>Built a  web page of amazon online shopping platform ,Using HTML CSS & JS.</li>
+                        <li>Tools:VS code</li>
+                    </ul>
+                </div>
+            </div>
+        </section>   
+          <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="section-content">
+                <div class="skills-grid">
+                    <div class="skill-item">HTML5(Semantic Elements,Multimedia Support )</div>
+                    <div class="skill-item">CSS (Box Model, Properties and Values)</div>
+                    <div class="skill-item">JAVA SCRIPT (DOM Manipulation (Document Object Model))</div>
+                    <div class="skill-item">JAVA (Class & Object ,Packages and Access Modifiers )</div>
+                    
+                </div>
+            </div>
+        </section>
+         <section class="section">
+            <h2 class="section-title">Interests</h2>
+            <div class="section-content">
+                <div class="interests-list">
+                    <div class="interest-item">Sketching</div>
+                    <div class="interest-item">Gaming</div>
+                    <div class="interest-item">volleyball</div>
+                    <div class="interest-item">Travelling</div>
+                </div>
+            </div>
+        </section>
+   <section class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="section-content">
+                <div class="languages-list">
+                    <div class="language-item">English</div>
+                    <div class="language-item">Hindi</div>
+                    <div class="language-item">Marathi</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -167,7 +167,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "Sudhanshu_Sakhare.html",
         profileImage: "sudhanshuPic.jpg",
-        uploadDate: "2025-01-15",
+        uploadDate: "2025-07-18",
         specialization: "Full Stack MERN Development",
       },
       {
@@ -189,7 +189,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "Pranay_Bhagat.html",
         profileImage: "photo.jpg",
-        uploadDate: "active",
+        uploadDate: "2025-07-20",
         specialization: "Java Full Stack Development",
       },
 
@@ -205,7 +205,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "Fulanshu_Kuthe.html",
         profileImage: "Fulanshu_Kuthe.jpg",
-        uploadDate: "active",
+        uploadDate: "2025-07-20",
         specialization: "Java Full Stack Development",
       },
       
@@ -220,7 +220,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "Gargee_Purwar.html",
         profileImage: "GargeePurwar.jpg",
-        uploadDate: "active",
+        uploadDate: "2025-07-20",
         specialization: "Java Full Stack Development",
       },
       {
@@ -231,7 +231,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "Resume_Fullstack.html",
         profileImage: "Profile.jpeg",
-        uploadDate: "2025-01-20",
+        uploadDate: "2025-07-20",
         specialization: "Java Full Stack Development",
       },
 
@@ -243,7 +243,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "index.html",
         profileImage: "Rupali-profile.jpg",
-        uploadDate: "2025-01-20",
+        uploadDate: "2025-07-20",
         specialization: "Java Full Stack Development",
       },
       {
@@ -254,7 +254,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "resume.html",
         profileImage: "photo.jpeg",
-        uploadDate: "2025-01-20",
+        uploadDate: "2025-07-20",
         specialization: "Java Full Stack Development",
       },
       {
@@ -265,7 +265,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "RC.html",
         profileImage: "photo.jpg",
-        uploadDate: "2025-01-20",
+        uploadDate: "2025-07-20",
         specialization: "Java Full Stack Development",
       },
       {
@@ -276,7 +276,7 @@ class StudentPortfolioManager {
         status: "active",
         resumeFile: "resume.html",
         profileImage: "Profile.jpeg",
-        uploadDate: "2025-01-20",
+        uploadDate: "2025-07-21",
         specialization: "Java Full Stack Development",
       },
       {
@@ -301,7 +301,17 @@ class StudentPortfolioManager {
         uploadDate: "2025-07-21",
         specialization: "Java Full Stack Development",
       },
-      
+      {
+        folderName: "Purwa_ughade_Ds",
+        name: "Purwa Ughade",
+        course: "MCA",
+        batch: 1,
+        status: "active",
+        resumeFile: "resume.html",
+        profileImage: "Profilephoto.jpeg",
+        uploadDate: "2025-07-21",
+        specialization: "Java Full Stack Development",
+      },
 
       // ADD MORE STUDENTS HERE AS THEY UPLOAD FOLDERS
     ];
@@ -339,6 +349,17 @@ class StudentPortfolioManager {
       /[^a-zA-Z0-9]/g,
       "-"
     )}`;
+      // Format date as DD-MM-YYYY
+    const formatDate = (dateString) => {
+      if (dateString === "pending" || dateString === "active") return dateString;
+      
+      const date = new Date(dateString);
+      const day = String(date.getDate()).padStart(2, '0');
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const year = date.getFullYear();
+      
+      return `${day}-${month}-${year}`;
+    };
 
     return `
             <div class="student-card ${student.status}" 
@@ -435,9 +456,9 @@ class StudentPortfolioManager {
                   student.uploadDate !== "pending"
                     ? `<div class="upload-date">
                         <i class="fas fa-calendar"></i>
-                        Uploaded: ${new Date(
+                        Uploaded: ${formatDate(
                           student.uploadDate
-                        ).toLocaleDateString()}
+                        )}
                     </div>`
                     : `<div class="pending-status">
                         <i class="fas fa-upload"></i>
