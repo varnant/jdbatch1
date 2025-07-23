@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gargee Purwar - Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #eef3f7;
+      color: #333;
+      overflow-x: hidden  ;
+    }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, #42a5f5, #7e57c2);
+      opacity: 0.15;
+      z-index: -1;
+      animation: float 15s infinite ease-in-out alternate;
+    }
+
+    .circle1 {
+      width: 280px;
+      height: 280px;
+      top: -60px;
+      left: -90px;
+    }
+
+    .circle2 {
+      width: 200px;
+      height: 200px;
+      bottom: 80px;
+      right: -60px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-20px) scale(1.05); }
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #42a5f5;
+      object-fit: cover;
+      margin-bottom: 12px;
+      transition: transform 0.3s;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1);
+    }
+
+    .header h1 {
+      font-size: 2.6em;
+      color: #0d47a1;
+      transition: color 0.3s;
+    }
+
+    .header h1:hover {
+      color: #1a237e;
+    }
+
+    .header p {
+      color: #555;
+      font-size: 1.1em;
+      margin-top: 8px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .section h2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.6em;
+      color: #1565c0;
+      cursor: pointer;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #64b5f6;
+      transition: color 0.3s ease;
+    }
+
+    .section h2:hover {
+      color: #0d47a1;
+    }
+
+    .section h2 span {
+      transition: transform 0.3s ease;
+      font-size: 0.8em;
+    }
+
+    .section.collapsed h2 span {
+      transform: rotate(-90deg);
+    }
+
+    .section-content {
+      padding-top: 10px;
+      transition: max-height 0.3s ease;
+    }
+
+    .section.collapsed .section-content {
+      display: none;
+    }
+
+    .card {
+      background: #e3f2fd;
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.7;
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 0.95em;
+      color: #444;
+    }
+
+    .contact a {
+      color: #1565c0;
+      text-decoration: none;
+      margin: 0 5px;
+      transition: color 0.3s;
+    }
+
+    .contact a:hover {
+      color: #0d47a1;
+      text-decoration: underline;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin: 20px auto;
+      padding: 10px 24px;
+      background: #1565c0;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #0d47a1;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+
+  <div class="container" id="resume">
+    <div class="header">
+      <img src="./Images/Gargeepurwar.jpg" alt="Profile Picture" class="profile-img" />
+      <h1>Gargee Purwar</h1>
+      <p>MCA Student</p>
+    </div>
+
+    <!-- Sections (Education, Skills, etc.) -->
+    <div class="section">
+      <h2>🎓 Education <span>▼</span></h2>
+      <div class="section-content">
+        <div class="card"><strong>MCA – JD College of Engineering and Management</strong><br />2025–Present</div>
+        <div class="card"><strong>B.Sc. Computer Science – D.R.B Sindhu Mahavidyalaya</strong><br />Graduated 2024 </div>
+        <div class="card"><strong>HSC – Maharashtra Board</strong><br />2021</div>
+        <div class="card"><strong>SSC – Maharashtra Board</strong><br />2019</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🛠 Technical Skills <span>▼</span></h2>
+      <div class="section-content">
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>PHP, Node.js, REST API</li>
+          <li>MySQL, MongoDB</li>
+          <li>Git, GitHub, Canva</li>
+          <li>Python, Pandas, NumPy, ChatGPT</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>💼 Projects <span>▼</span></h2>
+      <div class="section-content">
+        <div class="card"><strong>Generative AI Healthcare ChatBot</strong><br />Built using GPT for personalized medical Q&A</div>
+        <div class="card"><strong>Student Management System</strong><br />Built in JAVA</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>👩‍💻 Experience <span>▼</span></h2>
+      <div class="section-content">
+        <div class="card"><strong>Graphic Design Intern</strong><br />Remote, 2025 – Canva & creatives</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>📜 Certifications <span>▼</span></h2>
+      <div class="section-content">
+        <ul>
+          <li>Cloud Computing – NPTEL</li>
+          <li>C, C++, Java, Python– Institute</li>
+          <li>Graphic Designing  – NGO</li>
+          <li>Ms Office, DTP – Government Institute</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🌍 Languages & More <span>▼</span></h2>
+      <div class="section-content">
+        <div class="card">
+          <strong>Languages:</strong> English, Hindi<br />
+          <strong>Hobbies:</strong> Coding, Designing, AI<br />
+          <strong>Strengths:</strong> Quick Learner, Organized<br />
+          <strong>Weaknesses:</strong> Overthinking
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+  <h2>📱 Contact Me <span>▼</span></h2>
+  <div class="section-content">
+    <div class="card">
+      <strong>Email:</strong>
+      <a href="mailto:gargeepurwar@gmail.com" style="color: #1565c0; text-decoration: none;">gargeepurwar@gmail.com</a>
+    </div>
+    <div class="card">
+      <strong>Phone:</strong> +91-8275280409
+    </div>
+    <div class="card">
+      <strong>Location:</strong> Nagpur, India
+    </div>
+    <div class="card">
+      <strong>GitHub:</strong>
+      <a href="https://github.com/Gargee-15" target="_blank" style="color: #1565c0; text-decoration: none;">github.com/gargeepurwar</a>
+    </div>
+    <div class="card">
+      <strong>LinkedIn:</strong>
+      <a href=" " target="_blank" style="color: #1565c0; text-decoration: none;">linkedin.com/in/gargeepurwar</a>
+    </div>
+  </div>
+</div>
+
+
+    <div class="download-btn" onclick="window.print()">⬇️ Download Resume</div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const sectionHeaders = document.querySelectorAll(".section h2");
+
+      sectionHeaders.forEach(header => {
+        header.addEventListener("click", () => {
+          const section = header.parentElement;
+          section.classList.toggle("collapsed");
+        });
+
+        header.addEventListener("mouseover", () => {
+          header.style.cursor = "pointer";
+        });
+      });
+    });
+  </script>
+</body>
+</html>

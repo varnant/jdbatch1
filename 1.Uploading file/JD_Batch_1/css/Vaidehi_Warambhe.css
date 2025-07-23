@@ -1,0 +1,123 @@
+/* Base Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 850px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+header {
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+/* Optional: remove if not used elsewhere */
+h2 {
+  font-size: 28px;
+  margin: 5px 0;
+  text-align: left;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 2px solid #000000;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+
+h1 {
+  font-size: 32px;
+  margin: 5px 0;
+  color: #1a73e8; /* Blue for name */
+}
+
+/* Section Titles */
+h3 {
+  font-family: 'Georgia', serif;  /* You can change 'Georgia' to any font you prefer */
+  font-size: 22px;
+  color: #0056b3; /* optional: make heading blue */
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+  margin-top: 30px;
+}
+
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+th {
+  background-color: #e9f1fb;
+  color: #1a73e8; /* Official blue */
+  text-align: left;
+  padding: 12px;
+  border-bottom: 2px solid #ccc;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+
+/* Lists */
+ul {
+  margin: 10px 0;
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  font-weight: 500;
+}
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 2px solid #1a73e8;
+}
+
+.header-details {
+  flex-grow: 1;
+  font-family: 'Georgia', serif;
+}
+
+
+

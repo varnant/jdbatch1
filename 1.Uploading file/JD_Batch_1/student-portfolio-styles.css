@@ -1,0 +1,893 @@
+/* Enhanced Student Card Styles with Unique View Portfolio Button */
+.student-card {
+  background: white;
+  border-radius: 20px;
+  padding: 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid transparent;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 25px;
+  transform-style: preserve-3d;
+}
+
+.student-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(76, 175, 80, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.student-card.card-hover::before {
+  transform: translateX(100%);
+}
+
+.student-card.card-hover {
+  transform: translateY(-12px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 20px 40px rgba(76, 175, 80, 0.25);
+  border-color: #4caf50;
+}
+
+.student-card.pending.card-hover {
+  border-color: #f57c00;
+  box-shadow: 0 20px 40px rgba(255, 152, 0, 0.25);
+}
+
+/* Card Header */
+.card-header {
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  z-index: 2;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.student-card.card-hover .status-badge {
+  transform: scale(1.05);
+}
+
+.status-badge.active {
+  background: rgba(76, 175, 80, 0.1);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.status-badge.pending {
+  background: rgba(255, 152, 0, 0.1);
+  color: #f57c00;
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+.batch-indicator {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.student-card.card-hover .batch-indicator {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.batch-indicator.batch-1 {
+  background: #4caf50;
+  color: white;
+}
+
+/* Enhanced Card Body */
+.card-body {
+  padding: 25px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Simplified Image Container with Scale and Glow Effects */
+.student-image-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.student-image-container.active {
+  border-color: #4caf50;
+}
+
+.student-image-container.pending {
+  border-color: #ff9800;
+}
+
+/* Simple hover effect - scale and glow */
+.student-card.card-hover .student-image-container {
+  transform: scale(1.25);
+  border-width: 6px;
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.6), 0 0 40px rgba(76, 175, 80, 0.4),
+    0 0 60px rgba(76, 175, 80, 0.2);
+}
+
+.student-card.pending.card-hover .student-image-container {
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.6), 0 0 40px rgba(255, 152, 0, 0.4),
+    0 0 60px rgba(255, 152, 0, 0.2);
+}
+
+.student-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  filter: brightness(1) saturate(1);
+}
+
+.student-card.card-hover .student-image {
+  filter: brightness(1.2) saturate(1.3) contrast(1.1);
+}
+
+/* Animated Border Effect */
+.image-border-animation {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #4caf50,
+    #2196f3,
+    #ff9800,
+    #e91e63,
+    #4caf50
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: borderRotate 2s linear infinite;
+  z-index: -1;
+}
+
+@keyframes borderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.student-card.card-hover .image-border-animation {
+  opacity: 1;
+}
+
+/* Remove overlay effects - no longer needed */
+.image-overlay-wrapper {
+  display: none;
+}
+
+.image-overlay {
+  display: none;
+}
+
+.overlay-content {
+  display: none;
+}
+
+.pulse-icon {
+  display: none;
+}
+
+.overlay-text {
+  display: none;
+}
+
+/* Remove floating icons */
+.floating-icons {
+  display: none;
+}
+
+.floating-icon {
+  display: none;
+}
+
+/* Enhanced Student Info */
+.student-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  position: relative;
+  overflow: hidden;
+}
+
+.name-text {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.name-highlight {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(76, 175, 80, 0.3),
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.student-card.card-hover .name-highlight {
+  left: 100%;
+}
+
+.student-card.card-hover .name-text {
+  transform: scale(1.05);
+  color: #1b5e20;
+}
+
+.student-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.course-badge {
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.student-card.card-hover .course-badge {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.course-badge.course-mca {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: white;
+}
+
+
+.course-badge[class*="b.tech"],
+.course-badge[class*="b-tech"] {
+  background: linear-gradient(135deg, #e53935, #b71c1c) !important;
+  color: #fff !important;
+}
+.specialization {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  background: #f0f0f0;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.student-card.card-hover .specialization {
+  background: #e8f5e8;
+  color: #2e7d32;
+  transform: scale(1.05);
+}
+
+.specialization-icon {
+  color: #ffd700;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Hide folder info completely */
+.folder-info {
+  display: none !important;
+}
+
+/* Enhanced Card Actions - Focus on Single Portfolio Button */
+.card-actions {
+  padding: 20px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Revolutionary Portfolio Button Design */
+.portfolio-btn-unique {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 2px solid transparent;
+}
+
+.portfolio-btn-unique:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4),
+    0 0 0 1px rgba(102, 126, 234, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 16px 24px;
+  color: white;
+  background: transparent;
+}
+
+.btn-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.portfolio-btn-unique:hover .btn-icon-wrapper {
+  transform: rotate(360deg) scale(1.2);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.portfolio-btn-unique:hover .btn-icon {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.btn-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.btn-main-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-sub-text {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.portfolio-btn-unique:hover .btn-main-text {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transform: translateX(5px);
+}
+
+.portfolio-btn-unique:hover .btn-sub-text {
+  opacity: 1;
+  transform: translateX(5px);
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+/* Animated Glow Effect */
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%) skewX(-15deg);
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+.portfolio-btn-unique:hover .btn-glow {
+  transform: translateX(100%) skewX(-15deg);
+}
+
+/* Floating Particles Effect */
+.btn-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.btn-particles span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat 2s ease-in-out infinite;
+}
+
+.btn-particles span:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.btn-particles span:nth-child(2) {
+  top: 60%;
+  left: 70%;
+  animation-delay: 0.5s;
+}
+
+.btn-particles span:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.btn-particles span:nth-child(4) {
+  top: 40%;
+  left: 80%;
+  animation-delay: 1.5s;
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1);
+  }
+}
+
+.portfolio-btn-unique:hover .btn-particles span {
+  animation-play-state: running;
+}
+
+/* Disabled Button Style */
+.portfolio-btn-disabled {
+  position: relative;
+  display: block;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.portfolio-btn-disabled .btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.portfolio-btn-disabled .btn-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-btn-disabled .btn-main-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.portfolio-btn-disabled .btn-sub-text {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* Remove social links completely */
+.social-links-container {
+  display: none !important;
+}
+
+.social-links {
+  display: none !important;
+}
+
+.social-btn {
+  display: none !important;
+}
+
+/* Particle Effects */
+.card-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #4caf50, transparent);
+  border-radius: 50%;
+  opacity: 0;
+  left: var(--x);
+  top: var(--y);
+  animation: particleFloat 2s ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes particleFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-20px) scale(1);
+    opacity: 1;
+  }
+}
+
+.student-card.card-hover .particle {
+  animation-play-state: running;
+}
+
+/* Upload Date and Pending Status */
+.upload-date,
+.pending-status {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.7rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 4px 8px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.student-card.card-hover .upload-date,
+.student-card.card-hover .pending-status {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pending-status {
+  color: #f57c00;
+  background: rgba(255, 152, 0, 0.1);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+}
+
+/* Enhanced filter buttons */
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 20px;
+  border: 2px solid #4caf50;
+  background: white;
+  color: #4caf50;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 5px;
+}
+
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.filter-btn:hover::before {
+  left: 100%;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #4caf50;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .student-card {
+    margin-bottom: 20px;
+  }
+
+  .card-header {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-body {
+    padding: 20px 15px;
+  }
+
+  .student-image-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .student-name {
+    font-size: 1rem;
+  }
+
+  .student-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-actions {
+    padding: 15px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    margin: 3px;
+  }
+
+  .student-card.card-hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  .student-card.card-hover .student-image-container {
+    transform: scale(1.15);
+  }
+
+  .portfolio-btn-unique {
+    padding: 0;
+  }
+
+  .btn-content {
+    padding: 14px 20px;
+    gap: 12px;
+  }
+
+  .btn-icon-wrapper {
+    width: 35px;
+    height: 35px;
+  }
+
+  .btn-main-text {
+    font-size: 1rem;
+  }
+
+  .btn-sub-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainees-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .filter-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .portfolio-btn-unique {
+    border-radius: 15px;
+  }
+
+  .btn-content {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .btn-text-wrapper {
+    align-items: center;
+  }
+}
+
+/* Animation for card entrance */
+@keyframes cardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.student-card {
+  animation: cardSlideIn 0.8s ease forwards;
+}
+
+/* Additional glow effect for active cards */
+@keyframes profileGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.4), 0 0 40px rgba(76, 175, 80, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.8), 0 0 60px rgba(76, 175, 80, 0.4),
+      0 0 90px rgba(76, 175, 80, 0.2);
+  }
+}
+
+.student-card.card-hover.active .student-image-container {
+  animation: profileGlow 2s ease-in-out infinite;
+}
+
+/* Pulsing glow for pending cards */
+@keyframes pendingGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(255, 152, 0, 0.4), 0 0 40px rgba(255, 152, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 152, 0, 0.8), 0 0 60px rgba(255, 152, 0, 0.4),
+      0 0 90px rgba(255, 152, 0, 0.2);
+  }
+}
+
+.student-card.card-hover.pending .student-image-container {
+  animation: pendingGlow 2s ease-in-out infinite;
+}
+
+/* Button Focus States for Accessibility */
+.portfolio-btn-unique:focus,
+.portfolio-btn-disabled:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.4);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .portfolio-btn-unique {
+    border: 2px solid #000;
+  }
+
+  .portfolio-btn-disabled {
+    border: 2px solid #666;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-btn-unique,
+  .student-image-container,
+  .btn-glow,
+  .btn-particles span {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .portfolio-btn-unique:hover {
+    transform: none;
+  }
+}

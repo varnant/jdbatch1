@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudhanshu R Sakhare - Interactive Resume</title>
+
+    <!-- Preload critical resources with error handling -->
+    <link
+      rel="preload"
+      href="./Images/sudhanshuPic.jpg"
+      as="image"
+      crossorigin="anonymous"
+    />
+    <link rel="preload" href="../css/SudhanshuCss.css" as="style" />
+    <link rel="preload" href="../Java_Scripts/Sudhanshu/main.js" as="script" />
+
+    <!-- Fonts with fallback -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome with integrity check -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../css/SudhanshuCss.css" />
+
+    <!-- SEO and Social Media Tags -->
+    <meta
+      name="description"
+      content="Sudhanshu R Sakhare - Full Stack MERN Developer with 2+ years of experience in web development, React.js, Node.js, and modern technologies."
+    />
+    <meta
+      name="keywords"
+      content="Full Stack Developer, MERN Stack, React.js, Node.js, Web Developer, JavaScript, Resume"
+    />
+    <meta name="author" content="Sudhanshu R Sakhare" />
+
+    <!-- Open Graph Tags for better sharing -->
+    <meta
+      property="og:title"
+      content="Sudhanshu R Sakhare - Full Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Interactive resume showcasing full stack development skills and projects"
+    />
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="./sudhanshuPic.jpg" />
+  </head>
+  <body>
+    <div class="animated-bg"></div>
+    <div class="particle-system" id="particleSystem"></div>
+
+    <div class="resume-container">
+      <!-- Header -->
+      <div class="header">
+        <div class="profile-section">
+          <div class="profile-image-container" onclick="changeProfileImage()">
+            <img
+              src="./Images/sudhanshuPic.jpg"
+              alt="Sudhanshu Profile"
+              class="profile-image"
+              id="profileImage"
+              loading="lazy"
+            />
+            <div class="profile-overlay">
+              <i class="fas fa-camera"></i>
+            </div>
+          </div>
+        </div>
+
+        <h1 class="name">Sudhanshu R Sakhare</h1>
+        <p class="title">Full Stack Developer & Software Engineer</p>
+
+        <div class="contact-info">
+          <div
+            class="contact-item"
+            onclick="copyToClipboard('sudhanshusakhare808@gmail.com')"
+          >
+            <i class="fas fa-envelope"></i>
+            <span>sudhanshusakhare808@gmail.com</span>
+          </div>
+          <div class="contact-item" onclick="copyToClipboard('+91 9284272018')">
+            <i class="fas fa-phone"></i>
+            <span>+91 9284272018</span>
+          </div>
+          <div class="contact-item" onclick="copyToClipboard('Nagpur, India')">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Nagpur, India</span>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/Sudhanshu-SRS"
+            target="_blank"
+            class="social-link github"
+          >
+            <i class="fab fa-github"></i>
+            <span class="tooltip">Visit GitHub</span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sudhanshu-sakhare-873598189/"
+            target="_blank"
+            class="social-link linkedin"
+          >
+            <i class="fab fa-linkedin"></i>
+            <span class="tooltip">Connect on LinkedIn</span>
+          </a>
+          <a
+            href="https://x.com/Sudhanshu_808"
+            target="_blank"
+            class="social-link twitter"
+          >
+            <i class="fab fa-twitter x-logo"></i>
+            <span class="tooltip">Follow on X</span>
+          </a>
+          <a
+            href="mailto:sudhanshusakhare808@gmail.com"
+            class="social-link email"
+          >
+            <i class="fas fa-envelope"></i>
+            <span class="tooltip">Send Email</span>
+          </a>
+          <a
+            href="https://www.instagram.com/sudhanshu_sakhare/"
+            target="_blank"
+            class="social-link instagram"
+          >
+            <i class="fab fa-instagram"></i>
+            <span class="tooltip">Follow on Instagram</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Professional Summary -->
+      <div class="section summary-section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="profile-summary">
+          Passionate Full Stack MERN Developer with 2+ years of experience in
+          designing and developing scalable web applications. Proficient in
+          modern web technologies including React, Node.js, Java, and cloud
+          platforms. Strong problem-solving skills with a proven track record of
+          delivering high-quality software solutions. Experienced in agile
+          development methodologies and committed to writing clean, maintainable
+          code. Seeking to leverage technical expertise and passion for
+          innovation to contribute to a dynamic development team.
+        </p>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="section skills-section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Frontend Technologies</h4>
+            <div class="skill-list">
+              <span class="skill-item">HTML5</span>
+              <span class="skill-item">CSS3</span>
+              <span class="skill-item">JavaScript</span>
+              <span class="skill-item">React.js</span>
+              <span class="skill-item">Vue.js</span>
+              <span class="skill-item">Bootstrap</span>
+              <span class="skill-item">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Backend Technologies</h4>
+            <div class="skill-list">
+              <span class="skill-item">Java</span>
+              <span class="skill-item">Spring Boot</span>
+              <span class="skill-item">Node.js</span>
+              <span class="skill-item">Express.js</span>
+              <span class="skill-item">Python</span>
+              <span class="skill-item">REST APIs</span>
+              <span class="skill-item">Microservices</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Database & Cloud</h4>
+            <div class="skill-list">
+              <span class="skill-item">MySQL</span>
+              <span class="skill-item">PostgreSQL</span>
+              <span class="skill-item">MongoDB</span>
+              <span class="skill-item">Firebase</span>
+              <span class="skill-item">AWS</span>
+              <span class="skill-item">Docker</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Tools & Others</h4>
+            <div class="skill-list">
+              <span class="skill-item">Git</span>
+              <span class="skill-item">GitHub</span>
+              <span class="skill-item">VS Code</span>
+              <span class="skill-item">IntelliJ IDEA</span>
+              <span class="skill-item">Postman</span>
+              <span class="skill-item">Jira</span>
+              <span class="skill-item">R-studio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Experience -->
+      <div class="section experience-section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="experience-item">
+          <h3 class="job-title">Full Stack Developer</h3>
+          <p class="company">Carnegie TechX Pvt. Ltd.</p>
+          <p class="duration">June 2024 - Present</p>
+          <div class="description">
+            <ul>
+              <li>
+                Developed and maintained 5+ web applications using React.js and
+                Node.js, serving 10,000+ users
+              </li>
+              <li>
+                Implemented RESTful APIs and microservices architecture,
+                improving system performance by 30%
+              </li>
+              <li>
+                Collaborated with cross-functional teams using Agile methodology
+                to deliver projects on time
+              </li>
+              <li>
+                Optimized database and implemented caching strategies, reducing
+                response time by 25%
+              </li>
+              <li>
+                Mentored 2 junior developers and conducted code reviews to
+                maintain code quality standards
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <h3 class="job-title">Ethical Hacking Intern</h3>
+          <p class="company">One Byte Labs</p>
+          <p class="duration">August 2022 - January 2023</p>
+          <div class="description">
+            <ul>
+              <li>
+                Conducted vulnerability assessments and penetration testing on
+                web applications and internal systems
+              </li>
+              <li>
+                Performed reconnaissance, enumeration, and exploitation using
+                tools like Nmap, Burp Suite, and Metasploit
+              </li>
+              <li>
+                Prepared detailed security audit reports and recommended
+                mitigation strategies
+              </li>
+              <li>
+                Collaborated with the development team to patch critical
+                vulnerabilities
+              </li>
+              <li>
+                Assisted in developing internal security automation scripts
+                using Python
+              </li>
+              <li>
+                Implemented basic network monitoring and intrusion detection
+                solutions
+              </li>
+              <li>
+                Participated in CTF challenges to enhance practical hacking
+                skills
+              </li>
+              <li>
+                Documented ethical hacking processes and maintained testing
+                environments
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="experience-item">
+          <h3 class="job-title">Computer Network & Hardware Repair</h3>
+          <p class="company">Kapils Tech</p>
+          <p class="duration">February 2022 – July 2022</p>
+          <div class="description">
+            <ul>
+              <li>
+                Repaired and maintained computer hardware components and
+                peripherals
+              </li>
+              <li>Configured routers, switches, and LAN setups for clients</li>
+              <li>
+                Resolved system errors, network issues, and performed OS
+                installations
+              </li>
+              <li>Provided remote and on-site technical support to users</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Projects -->
+      <div class="section projects-section">
+        <h2 class="section-title">Key Projects</h2>
+
+        <div class="project-item">
+          <h3 class="project-title">E-commerce Platform</h3>
+          <p class="duration">Live Project | 2025</p>
+          <div class="description">
+            Full-stack e-commerce solution with user authentication, shopping
+            cart, payment integration, and admin dashboard. Features include
+            product catalog, order management, and real-time inventory tracking.
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Stripe API</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://rashistudio.com/"
+              target="_blank"
+              class="project-link live-link"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/Sudhanshu-SRS/ecommerce-platform"
+              target="_blank"
+              class="project-link github-link"
+            >
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h3 class="project-title">GrindBoard: Task Management Application</h3>
+          <p class="duration">Major Project | 2025</p>
+          <div class="description">
+            Collaborative task management tool with real-time updates, team
+            collaboration features, and project tracking. Implemented
+            drag-and-drop functionality and notification system.
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Spring Boot</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">WebSocket</span>
+            <span class="tech-tag">Docker</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://grindboard-demo.netlify.app"
+              target="_blank"
+              class="project-link live-link"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/Sudhanshu-SRS/GrindBoard"
+              target="_blank"
+              class="project-link github-link"
+            >
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <h3 class="project-title">Isasia Revari : MERN App's Dashboard</h3>
+          <p class="duration">Live Project | 2024</p>
+          <div class="description">
+            Interactive dashboard application with real-time data visualization,
+            user management, and analytics. Built with modern MERN stack
+            technologies and responsive design principles.
+          </div>
+          <div class="project-tech">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Express.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Chart.js</span>
+          </div>
+          <div class="project-links">
+            <a
+              href="https://isasia-revari-dashboard.vercel.app"
+              target="_blank"
+              class="project-link live-link"
+            >
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a
+              href="https://github.com/Sudhanshu-SRS/Inventory-Management-System"
+              target="_blank"
+              class="project-link github-link"
+            >
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="section education-section">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-item">
+          <h3 class="degree-title">Master of Computer Applications (MCA)</h3>
+          <p class="institution">
+            Dr. Babasaheb Ambedkar Technological University (DBATU)
+          </p>
+          <p class="duration">2024 – Present | CGPA (Sem I): 8.91</p>
+          <div class="description">
+            <strong>Status:</strong> Currently Pursuing
+          </div>
+        </div>
+        <div class="education-item">
+          <h3 class="degree-title">Bachelor of Science in Computer Science</h3>
+          <p class="institution">RTMNU University</p>
+          <p class="duration">2020 - 2024 | DIVISION : I</p>
+          <div class="description">
+            <strong>Relevant Coursework:</strong> Data Structures and
+            Algorithms, Database Management Systems, Software Engineering, Web
+            Development, Computer Networks, Operating Systems
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Column Section -->
+      <div class="two-column">
+        <!-- Certifications -->
+        <div class="certifications">
+          <h4>Certifications</h4>
+          <div class="cert-item">
+            <div class="cert-name">One Byte Labs Certified Ethical Hacking</div>
+            <div class="cert-date">2023</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">VFX Certification</div>
+            <div class="cert-date">2024</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">3d & CGI Certification</div>
+            <div class="cert-date">2024</div>
+          </div>
+          <div class="cert-item">
+            <div class="cert-name">Full Stack Web Development</div>
+            <div class="cert-date">2023</div>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="achievements">
+          <h4>Key Achievements</h4>
+          <ul class="achievement-list">
+            <li>
+              Secured 1st rank in Inter-College Statistical Presentation
+              competition
+            </li>
+            <li>Won 3rd place in Inter-College Group Discussion competition</li>
+            <li>Achieved 1st position in CodeHunt at college tech fest</li>
+            <li>Delivered 15+ live client projects with hands-on deployment</li>
+            <li>
+              Maintains 10+ active GitHub repositories with real-world project
+              releases
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating Action Menu -->
+    <div class="floating-menu">
+      <div class="fab-options" id="fabOptions">
+        <button
+          class="fab-option"
+          onclick="downloadResume()"
+          title="Download PDF"
+        >
+          <i class="fas fa-download"></i>
+        </button>
+        <button class="fab-option" onclick="printResume()" title="Print">
+          <i class="fas fa-print"></i>
+        </button>
+        <button class="fab-option" onclick="shareResume()" title="Share">
+          <i class="fas fa-share"></i>
+        </button>
+        <button class="fab-option" onclick="toggleTheme()" title="Toggle Theme">
+          <i class="fas fa-palette"></i>
+        </button>
+      </div>
+      <button class="fab-main" onclick="toggleFabMenu()">
+        <i class="fas fa-plus" id="fabIcon"></i>
+      </button>
+    </div>
+
+    <!-- External JavaScript Files with error handling -->
+    <script
+      src="../Java_Scripts/Sudhanshu/animations.js"
+      defer
+      onerror="console.log('animations.js failed to load')"
+    ></script>
+    <script
+      src="../Java_Scripts/Sudhanshu/interactions.js"
+      defer
+      onerror="console.log('interactions.js failed to load')"
+    ></script>
+    <script
+      src="../Java_Scripts/Sudhanshu/main.js"
+      defer
+      onerror="console.log('main.js failed to load')"
+    ></script>
+
+    <!-- Fallback script if external files fail -->
+    <script>
+      // Basic fallback functionality
+      window.addEventListener("load", function () {
+        if (typeof window.resumeApp === "undefined") {
+          console.log("Using fallback functionality");
+          // Add basic click handlers if JS files failed to load
+          document.querySelectorAll("[onclick]").forEach((element) => {
+            const onclick = element.getAttribute("onclick");
+            if (onclick.includes("copyToClipboard")) {
+              element.addEventListener("click", function () {
+                console.log("Copy functionality requires external scripts");
+              });
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
